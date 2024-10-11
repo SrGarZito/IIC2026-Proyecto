@@ -26,6 +26,13 @@ async function fetchData() {
 };
 
 fetchData().then(data => {
+    let nuevoDiv = document.createElement('div');
+
+    // Asignar un id único al nuevo div
+    nuevoDiv.id = 'barchart';
+
+    // Insertar el nuevo div dentro de un contenedor existente
+    document.body.appendChild(nuevoDiv);
 
     const trace = {
         x: data.char,
@@ -39,7 +46,7 @@ fetchData().then(data => {
         yaxis: { title: 'Power Level' }
     };
 
-    Plotly.newPlot('barchart 1', [trace], layout);
+    Plotly.newPlot('barchart', [trace], layout);
 });
 
 
