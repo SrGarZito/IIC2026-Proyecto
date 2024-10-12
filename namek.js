@@ -1,9 +1,32 @@
-//import './barchart.js';
 
 function namek(){
     let SVG = document.getElementById("namek");
-    SVG.setAttribute("width", "527");
-    SVG.setAttribute("height", "905");
+    SVG.setAttribute("width", "400");
+    SVG.setAttribute("height", "687");
+}
+
+function fondo1(){
+    let SVG = document.getElementById("fondo1");
+    SVG.setAttribute("width", "1200");
+    SVG.setAttribute("height", "800");
+}
+
+function fondo2(){
+    let SVG = document.getElementById("fondo2");
+    SVG.setAttribute("width", "300");
+    SVG.setAttribute("height", "450");
+}
+
+function fondo3(){
+    let SVG = document.getElementById("fondo3");
+    SVG.setAttribute("width", "500");
+    SVG.setAttribute("height", "800");
+}
+
+function fondo4(){
+    let SVG = document.getElementById("fondo4");
+    SVG.setAttribute("width", "500");
+    SVG.setAttribute("height", "800");
 }
 
 async function fetchData1() {
@@ -25,30 +48,34 @@ async function fetchData1() {
     return { char, power };
 };
 
-fetchData1().then(data => {
-    let nuevoDiv = document.createElement('div');
+function graf1() {
+    fetchData1().then(data => {
+        let nuevoDiv = document.createElement('div');
 
-    // Asignar un id único al nuevo div
-    nuevoDiv.id = 'barchart';
+        // Asignar un id único al nuevo div
+        nuevoDiv.id = 'barchart';
 
-    // Insertar el nuevo div dentro de un contenedor existente
-    document.body.appendChild(nuevoDiv);
+        // Insertar el nuevo div dentro de un contenedor existente
+        document.body.appendChild(nuevoDiv);
 
-    const trace = {
-        x: data.char,
-        y: data.power,
-        type: 'bar',
-    };
-    
-    const layout = {
-        title: 'Strong',
-        xaxis: { title: 'Characters' },
-        yaxis: { title: 'Power Level' },
-        width: '745'
-    };
+        const trace = {
+            x: data.char,
+            y: data.power,
+            type: 'bar',
+            marker: {
+                color: ['rgba(211, 104, 255, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
+                    'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
+            }
+        };
+        
+        const layout = {
+            title: 'Saga de Namek',
+            width: '745'
+        };
 
-    Plotly.newPlot('barchart', [trace], layout);
-});
+        Plotly.newPlot('barchart', [trace], layout);
+    });
+}
 
 async function fetchData2() {
     const response = await fetch('./force.csv');
@@ -69,30 +96,30 @@ async function fetchData2() {
     return { char, power };
 };
 
-fetchData2().then(data => {
-    let nuevoDiv = document.createElement('div');
+function graf2() {
+    fetchData2().then(data => {
+        let nuevoDiv = document.createElement('div');
 
-    // Asignar un id único al nuevo div
-    nuevoDiv.id = 'barchart 1';
+        // Asignar un id único al nuevo div
+        nuevoDiv.id = 'barchart 1';
 
-    // Insertar el nuevo div dentro de un contenedor existente
-    document.body.appendChild(nuevoDiv);
+        // Insertar el nuevo div dentro de un contenedor existente
+        document.body.appendChild(nuevoDiv);
 
-    const trace = {
-        x: data.char,
-        y: data.power,
-        type: 'bar',
-    };
-    
-    const layout = {
-        title: 'Strong',
-        xaxis: { title: 'Characters' },
-        yaxis: { title: 'Power Level' },
-        width: '745'
-    };
+        const trace = {
+            x: data.char,
+            y: data.power,
+            type: 'bar',
+        };
+        
+        const layout = {
+            title: 'Saga de las Fuerzas Especiales Ginyu',
+            width: '745'
+        };
 
-    Plotly.newPlot('barchart 1', [trace], layout);
-});
+        Plotly.newPlot('barchart 1', [trace], layout);
+    });
+}
 
 async function fetchData3() {
     const response = await fetch('./ginyu.csv');
@@ -113,30 +140,30 @@ async function fetchData3() {
     return { char, power };
 };
 
-fetchData3().then(data => {
-    let nuevoDiv = document.createElement('div');
+function graf3() {
+    fetchData3().then(data => {
+        let nuevoDiv = document.createElement('div');
 
-    // Asignar un id único al nuevo div
-    nuevoDiv.id = 'barchart 2';
+        // Asignar un id único al nuevo div
+        nuevoDiv.id = 'barchart 2';
 
-    // Insertar el nuevo div dentro de un contenedor existente
-    document.body.appendChild(nuevoDiv);
+        // Insertar el nuevo div dentro de un contenedor existente
+        document.body.appendChild(nuevoDiv);
 
-    const trace = {
-        x: data.char,
-        y: data.power,
-        type: 'bar',
-    };
-    
-    const layout = {
-        title: 'Strong',
-        xaxis: { title: 'Characters' },
-        yaxis: { title: 'Power Level' },
-        width: '745'
-    };
+        const trace = {
+            x: data.char,
+            y: data.power,
+            type: 'bar',
+        };
+        
+        const layout = {
+            title: 'Saga del Capitán Ginyu',
+            width: '745'
+        };
 
-    Plotly.newPlot('barchart 2', [trace], layout);
-});
+        Plotly.newPlot('barchart 2', [trace], layout);
+    });
+}
 
 async function fetchData4() {
     const response = await fetch('./freezer.csv');
@@ -157,31 +184,37 @@ async function fetchData4() {
     return { char, power };
 };
 
-fetchData4().then(data => {
-    let nuevoDiv = document.createElement('div');
+function graf4() {
+    fetchData4().then(data => {
+        let nuevoDiv = document.createElement('div');
 
-    // Asignar un id único al nuevo div
-    nuevoDiv.id = 'barchart 3';
+        // Asignar un id único al nuevo div
+        nuevoDiv.id = 'barchart 3';
 
-    // Insertar el nuevo div dentro de un contenedor existente
-    document.body.appendChild(nuevoDiv);
+        // Insertar el nuevo div dentro de un contenedor existente
+        document.body.appendChild(nuevoDiv);
 
-    const trace = {
-        x: data.char,
-        y: data.power,
-        type: 'bar',
-    };
-    
-    const layout = {
-        title: 'Strong',
-        xaxis: { title: 'Characters' },
-        yaxis: { title: 'Power Level' },
-        width: '745'
-    };
+        const trace = {
+            x: data.char,
+            y: data.power,
+            type: 'bar',
+        };
+        
+        const layout = {
+            title: 'Saga de Freezer',
+            width: '745'
+        };
 
-    Plotly.newPlot('barchart 3', [trace], layout);
-});
+        Plotly.newPlot('barchart 3', [trace], layout);
+    });
+}
 
+function activartodo(){
+    namek();
+    graf1();
+    fondo1();
+    fondo2();
+    fondo3();
+}
 
-fetchData1();
-namek();
+activartodo()

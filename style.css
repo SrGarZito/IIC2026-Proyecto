@@ -3,39 +3,208 @@
 #namek {
     border: 5px solid rgb(62, 65, 164);
     background: url('namekmap.jpg');
+    position: relative;
+    background-size: cover;
+    left: 100px;
+    top: 200px;
+}
+
+#fondo1 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 6px solid rgb(62, 65, 164);
+    right: 50px;
+    top: 115px;
+}
+
+#fondo2 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgb(62, 65, 164);
+    right: 910px;
+    top: 248px;
+    background-image: url(freezer.jpg);
+    background-size: cover;
+}
+
+#fondo3 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    left: 50px;
+    top: 115px;
+    border: 6px solid rgb(62, 65, 164);
+}
+
+#fondo4 {
+    background-color: rgb(99, 104, 247);
+    position: absolute;
+    left: 643px;
+    top: 736px;
+    width: 1110px;
+    border: 6px solid rgb(62, 65, 164);
 }
 
 .title {
     color: rgb(239, 242, 255);
-    background-color: #5263ff6f;
-    border: 2px solid rgb(239, 242, 255);
-    font-size: 32px;
     font-weight: bold;
     margin-bottom: 20px;
     align-items: center;
+    position: absolute;
+}
+
+#titulo {
+    top: 10px;
+    right: 50px;
+    font-size: 64px;
+    background-color: rgb(90, 144, 242);
+    border: 6px solid rgb(62, 65, 164);
+    text-align: center;
+    width: 1750px;
+}
+
+#subtitulo1 {
+    top: 140px;
+    left: 100px;
+    font-size: 32px;
+    background-color: rgb(99, 104, 247);
+    border: 5px solid rgb(62, 65, 164);
+    width: 400px;
+    text-align: center;
+}
+
+#subtitulo2 {
+    top: 143px;
+    left: 643px;
+    font-size: 32px;
+    background-color: rgb(99, 104, 247);
+    border: 5px solid rgb(62, 65, 164);
+    width: 300px;
+    text-align: center;
+}
+
+#subtitulo3 {
+    top: 143px;
+    right: 100px;
+    font-size: 32px;
+    background-color: rgb(99, 104, 247);
+    border: 5px solid rgb(62, 65, 164);
+    width: 744px;
+    height: 75px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+#sinopsis {
+    top: 760px;
+    right: 160px;
+    font-size: 20px;
+    width: 1010px;
+    text-align:justify;
+}
+
+#subsaga1 {
+    top: 345px;
+    left: 115px;
+    font-size: 16px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    width: 270px;
+}
+
+#subsaga2 {
+    top: 516px;
+    left: 115px;
+    font-size: 16px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    width: 270px;
+}
+
+#subsaga3 {
+    top: 683px;
+    left: 115px;
+    font-size: 16px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    width: 270px;
+}
+
+#subsaga4 {
+    top: 852px;
+    left: 115px;
+    font-size: 16px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    width: 270px;
 }
 
 .button {
-    background-color: #ff2f2f;
-    border: none;
-    color: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0);
     padding: 12px 22px;
     text-align: center;
     text-decoration: none;
     display:flexbox;
     font-size: 16px;
-    border-radius:16px;
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
     border: 2px solid rgb(255, 112, 112);
+    position: relative;
 }
 
-.button:hover {
-    background-color: #ff0000;
+/*PARA E2*/
+
+/* .button:hover {
 }
 
 .button:active {
-    background-color: #6d0000;
+} */
+
+#esfera1 {
+    top: -400px;
+    left: 20px;
+    background-image: url(esf1.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#esfera2 {
+    top: -230px;
+    left: -35px;
+    background-image: url(esf2.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#esfera3 {
+    top: -60px;
+    left: -90px;
+    background-image: url(esf3.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#esfera4 {
+    top: 110px;
+    left: -145px;
+    background-image: url(esf4.png);
+    background-position: center;
+    background-size: cover;
 }
 
 body {
-    background-color: rgb(90, 144, 242);
+    background-color: rgb(99, 104, 247);
+    position: relative
+}
+
+#barchart {
+    position:absolute;
+    top: 248px;
+    right: 100px;
+    border: 5px solid rgb(62, 65, 164);
 }
