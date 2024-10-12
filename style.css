@@ -7,12 +7,14 @@
     background-size: cover;
     left: 100px;
     top: 200px;
+    display: flex;
 }
 
 #fondo1 {
     background-color: rgb(90, 144, 242);
     position: absolute;
     border: 6px solid rgb(62, 65, 164);
+    display: flex;
     right: 50px;
     top: 115px;
 }
@@ -25,6 +27,7 @@
     top: 248px;
     background-image: url(freezer.jpg);
     background-size: cover;
+    display: flex;
 }
 
 #fondo3 {
@@ -33,6 +36,7 @@
     left: 50px;
     top: 115px;
     border: 6px solid rgb(62, 65, 164);
+    display: flex;
 }
 
 #fondo4 {
@@ -42,6 +46,7 @@
     top: 736px;
     width: 1110px;
     border: 6px solid rgb(62, 65, 164);
+    display: flex;
 }
 
 .title {
@@ -50,6 +55,7 @@
     margin-bottom: 20px;
     align-items: center;
     position: absolute;
+    display: flex;
 }
 
 #titulo {
@@ -58,7 +64,9 @@
     font-size: 64px;
     background-color: rgb(90, 144, 242);
     border: 6px solid rgb(62, 65, 164);
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     width: 1750px;
 }
 
@@ -69,7 +77,9 @@
     background-color: rgb(99, 104, 247);
     border: 5px solid rgb(62, 65, 164);
     width: 400px;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 #subtitulo2 {
@@ -79,7 +89,10 @@
     background-color: rgb(99, 104, 247);
     border: 5px solid rgb(62, 65, 164);
     width: 300px;
+    justify-content:center;
+    align-items: center;
     text-align: center;
+    display: flex;
 }
 
 #subtitulo3 {
@@ -101,6 +114,7 @@
     font-size: 20px;
     width: 1010px;
     text-align:justify;
+    display: flex;
 }
 
 #subsaga1 {
@@ -111,6 +125,7 @@
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
     width: 270px;
+    display: flex;
 }
 
 #subsaga2 {
@@ -120,6 +135,7 @@
     background-color: rgb(99, 104, 247);
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
+    display: flex;
     width: 270px;
 }
 
@@ -130,6 +146,7 @@
     background-color: rgb(99, 104, 247);
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
+    display: flex;
     width: 270px;
 }
 
@@ -141,6 +158,7 @@
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
     width: 270px;
+    display: flex;
 }
 
 .button {
@@ -155,6 +173,7 @@
     height: 50px;
     border: 2px solid rgb(255, 112, 112);
     position: relative;
+    display: flex;
 }
 
 /*PARA E2*/
@@ -166,35 +185,39 @@
 } */
 
 #esfera1 {
-    top: -400px;
-    left: 20px;
+    top: -425px;
+    left: 425px;
     background-image: url(esf1.png);
     background-position: center;
     background-size: cover;
+    display: flex;
 }
 
 #esfera2 {
-    top: -230px;
-    left: -35px;
+    top: -310px;
+    left: 425px;
     background-image: url(esf2.png);
     background-position: center;
     background-size: cover;
+    display: flex;
 }
 
 #esfera3 {
-    top: -60px;
-    left: -90px;
+    top: -190px;
+    left: 425px;
     background-image: url(esf3.png);
     background-position: center;
     background-size: cover;
+    display: flex;
 }
 
 #esfera4 {
-    top: 110px;
-    left: -145px;
+    top: -70px;
+    left: 425px;
     background-image: url(esf4.png);
     background-position: center;
     background-size: cover;
+    display: flex;
 }
 
 body {
@@ -207,4 +230,5 @@ body {
     top: 248px;
     right: 100px;
     border: 5px solid rgb(62, 65, 164);
+    display: flex;
 }
