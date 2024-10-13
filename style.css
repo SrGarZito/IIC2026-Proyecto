@@ -13,6 +13,14 @@
 
 /*Cuerpo del sitio web*/
 
+.container {
+    display: flex;                /* Activar Flexbox */
+    justify-content: space-between; /* Espacio entre elementos */
+    flex-wrap: wrap;            /* Permitir que los elementos se envuelvan en nuevas líneas */
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
 body {
     background-color: rgb(99, 104, 247);
     position: relative
