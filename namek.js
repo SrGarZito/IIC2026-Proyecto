@@ -24,25 +24,25 @@ function fondo2(){
 function enlace1(){
     let SVG = document.getElementById("enlace1");
     SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "180");
+    SVG.setAttribute("height", "120");
 }
 
 function enlace2(){
     let SVG = document.getElementById("enlace2");
     SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "180");
+    SVG.setAttribute("height", "120");
 }
 
 function enlace3(){
     let SVG = document.getElementById("enlace3");
     SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "180");
+    SVG.setAttribute("height", "120");
 }
 
 function enlace4(){
     let SVG = document.getElementById("enlace4");
     SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "180");
+    SVG.setAttribute("height", "120");
 }
 
 // POSIBLE USO PARA E2//
@@ -119,11 +119,17 @@ function graf1() {
             marker: {
                 color: ['rgba(211, 104, 255, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
                     'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
-            }
+            },
+            width:0.5
         };
         
         const layout = {
-            title: 'Saga de Namek',
+            title: {
+                text:'Saga de Namek',
+                font: {
+                    size: 24, // Tamaño de la fuente
+                    color: 'black' // Color de la fuente
+            }},
             width: '550',
             height: '250',
             yaxis: {
@@ -173,11 +179,17 @@ function graf2() {
             marker: {
                 color: ['rgba(255, 153, 106, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
                     'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
-            }
+            },
+            width:0.5
         };
         
         const layout = {
-            title: 'Saga de las Fuerzas Especiales Ginyu',
+            title: {
+                text:'Saga de las Fuerzas Especiales Ginyu',
+                font: {
+                    size: 24, // Tamaño de la fuente
+                    color: 'black' // Color de la fuente
+            }},
             width: '550',
             height: '250',
             yaxis: {
@@ -227,11 +239,17 @@ function graf3() {
             marker: {
                 color: ['rgba(135, 145, 255, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
                     'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
-            }
+            },
+            width:0.5
         };
         
         const layout = {
-            title: 'Saga del Capitán Ginyu',
+            title: {
+                text:'Saga del Capitán Ginyu',
+                font: {
+                    size: 24, // Tamaño de la fuente
+                    color: 'black' // Color de la fuente
+            }},
             width: '550',
             height: '250',
             yaxis: {
@@ -281,11 +299,17 @@ function graf4() {
             marker: {
                 color: ['rgba(255, 255, 148, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
                     'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
-            }
+            },
+            width:0.5
         };
         
         const layout = {
-            title: 'Saga de Freezer',
+            title: {
+                text:'Saga de Freezer',
+                font: {
+                    size: 24, // Tamaño de la fuente
+                    color: 'black' // Color de la fuente
+            }},
             width: '550',
             height: '250',
             yaxis: {
