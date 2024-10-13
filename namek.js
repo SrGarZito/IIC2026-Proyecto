@@ -57,25 +57,25 @@ function enlace4(){
 
 function foto1(){
     let SVG = document.getElementById("foto1");
-    SVG.setAttribute("width", "370");
+    SVG.setAttribute("width", "360");
     SVG.setAttribute("height", "250");
 }
 
 function foto2(){
     let SVG = document.getElementById("foto2");
-    SVG.setAttribute("width", "370");
+    SVG.setAttribute("width", "360");
     SVG.setAttribute("height", "250");
 }
 
 function foto3(){
     let SVG = document.getElementById("foto3");
-    SVG.setAttribute("width", "370");
+    SVG.setAttribute("width", "360");
     SVG.setAttribute("height", "250");
 }
 
 function foto4(){
     let SVG = document.getElementById("foto4");
-    SVG.setAttribute("width", "370");
+    SVG.setAttribute("width", "360");
     SVG.setAttribute("height", "250");
 }
 
@@ -130,7 +130,7 @@ function graf1() {
                     size: 24, // Tamaño de la fuente
                     color: 'black' // Color de la fuente
             }},
-            width: '550',
+            width: '540',
             height: '250',
             yaxis: {
                 title: "Cantidad de ki"
@@ -190,7 +190,7 @@ function graf2() {
                     size: 24, // Tamaño de la fuente
                     color: 'black' // Color de la fuente
             }},
-            width: '550',
+            width: '540',
             height: '250',
             yaxis: {
                 title: "Cantidad de ki"
@@ -250,7 +250,7 @@ function graf3() {
                     size: 24, // Tamaño de la fuente
                     color: 'black' // Color de la fuente
             }},
-            width: '550',
+            width: '540',
             height: '250',
             yaxis: {
                 title: "Cantidad de ki"
@@ -310,7 +310,7 @@ function graf4() {
                     size: 24, // Tamaño de la fuente
                     color: 'black' // Color de la fuente
             }},
-            width: '550',
+            width: '540',
             height: '250',
             yaxis: {
                 title: "Cantidad de ki"
