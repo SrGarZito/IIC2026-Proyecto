@@ -13,12 +13,32 @@
 
 /*Cuerpo del sitio web*/
 
-.container {
-    display: flex;                /* Activar Flexbox */
-    justify-content: space-between; /* Espacio entre elementos */
-    flex-wrap: wrap;            /* Permitir que los elementos se envuelvan en nuevas líneas */
-    padding: 20px;
-    background-color: #f4f4f4;
+@media (max-width: 768px) {
+    /* Cambiar el contenedor para que use el 100% de ancho */
+    .container {
+        flex-direction: column; /* Organizar elementos en columna */
+        padding: 10px;         /* Ajustar el padding */
+    }
+
+    /* Ajustar posiciones de elementos absolutos */
+    #fondo1, #fondo2, #enlace1, #enlace2, #enlace3, #enlace4 {
+        position: relative; /* Cambiar a posición relativa */
+        width: 100%;        /* Tomar el ancho completo */
+        margin: 10px 0;    /* Espacio entre elementos */
+    }
+
+    /* Ajustar el tamaño de los botones */
+    .button {
+        width: 80px;       /* Tamaño más pequeño para móviles */
+        height: 80px;
+    }
+
+    /* Ajustar el tamaño de los títulos */
+    #titulo, #subtitulo1, #subtitulo2, #subtitulo3 {
+        font-size: 24px;   /* Tamaño de fuente más pequeño */
+        width: 100%;       /* Asegurar que ocupen el ancho completo */
+        text-align: center; /* Centrar el texto */
+    }
 }
 
 body {
