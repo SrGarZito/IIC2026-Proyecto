@@ -1,15 +1,24 @@
 /* Light mode por defecto*/
 
+/*Imagen de las etapas de Namekusei*/
 #namek {
     border: 5px solid rgb(62, 65, 164);
     background: url('namekmap.jpg');
-    position: relative;
+    position: absolute;
     background-size: cover;
-    left: 100px;
+    right: 1115px;
     top: 200px;
     display: flex;
 }
 
+/*Cuerpo del sitio web*/
+
+body {
+    background-color: rgb(99, 104, 247);
+    position: relative
+}
+
+/*Fondos que permiten agregar estilo*/
 #fondo1 {
     background-color: rgb(90, 144, 242);
     position: absolute;
@@ -22,24 +31,53 @@
 #fondo2 {
     background-color: rgb(90, 144, 242);
     position: absolute;
-    border: 5px solid rgb(62, 65, 164);
-    right: 910px;
-    top: 248px;
-    background-image: url(freezer.jpg);
-    background-size: cover;
-    display: flex;
-}
-
-#fondo3 {
-    background-color: rgb(90, 144, 242);
-    position: absolute;
-    left: 50px;
+    right: 1085px;
     top: 115px;
     border: 6px solid rgb(62, 65, 164);
     display: flex;
+    width: 700px;
+    height: 1220px;
 }
 
-#fondo4 {
+#enlace1 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    border: 6px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+    right: 500px;
+    top: 250px;
+}
+
+#enlace2 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    border: 6px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+    right: 500px;
+    top: 523px;
+}
+
+#enlace3 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    border: 6px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+    right: 500px;
+    top: 794px;
+}
+
+#enlace4 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    border: 6px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+    right: 500px;
+    top: 1067px;
+}
+
+/*POSIBLE USO PARA E2*/
+
+/* #fondo3 {
     background-color: rgb(99, 104, 247);
     position: absolute;
     left: 643px;
@@ -47,7 +85,54 @@
     width: 1110px;
     border: 6px solid rgb(62, 65, 164);
     display: flex;
+} */
+
+/*Imagenes de los personajes*/
+#foto1 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    right: 658px;
+    top: 216px;
+    background-image: url(freezer.jpg);
+    background-size: cover;
+    display: flex;
 }
+
+#foto2 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    right: 658px;
+    top: 489px;
+    background-image: url(goku.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#foto3 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    right: 658px;
+    top: 759px;
+    background-image: url(vegeta.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#foto4 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    right: 658px;
+    top: 1033px;
+    background-image: url(gokussj.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+/*Label de titulos y subtitulos*/
 
 .title {
     color: rgb(239, 242, 255);
@@ -67,28 +152,28 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 1750px;
+    width: 1735px;
 }
 
 #subtitulo1 {
     top: 140px;
-    left: 100px;
+    right: 1115px;
     font-size: 32px;
     background-color: rgb(99, 104, 247);
     border: 5px solid rgb(62, 65, 164);
-    width: 400px;
+    width: 645px;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
 #subtitulo2 {
-    top: 143px;
-    left: 643px;
+    top: 140px;
+    right: 658px;
     font-size: 32px;
     background-color: rgb(99, 104, 247);
     border: 5px solid rgb(62, 65, 164);
-    width: 300px;
+    width: 370px;
     justify-content:center;
     align-items: center;
     text-align: center;
@@ -96,70 +181,79 @@
 }
 
 #subtitulo3 {
-    top: 143px;
-    right: 100px;
+    top: 140px;
+    right: 75px;
     font-size: 32px;
     background-color: rgb(99, 104, 247);
     border: 5px solid rgb(62, 65, 164);
-    width: 744px;
-    height: 75px;
+    width: 550px;
     display: flex;
     justify-content:center;
     align-items: center;
 }
 
-#sinopsis {
+/*POSIBLE USO PARA E2*/
+
+/* #sinopsis {
     top: 760px;
     right: 160px;
     font-size: 20px;
     width: 1010px;
     text-align:justify;
     display: flex;
-}
+} */
+
+/*SubSagas puestos en palabras*/
 
 #subsaga1 {
-    top: 345px;
-    left: 115px;
-    font-size: 16px;
+    top: 435px;
+    right: 1340px;
+    font-size: 24px;
     background-color: rgb(99, 104, 247);
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
-    width: 270px;
+    width: 400px;
+    height: 25px;
     display: flex;
 }
 
 #subsaga2 {
-    top: 516px;
-    left: 115px;
-    font-size: 16px;
+    top: 710px;
+    right: 1340px;
+    font-size: 24px;
     background-color: rgb(99, 104, 247);
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
     display: flex;
-    width: 270px;
+    height: 25px;
+    width: 400px;
 }
 
 #subsaga3 {
-    top: 683px;
-    left: 115px;
-    font-size: 16px;
+    top: 979px;
+    right: 1340px;
+    font-size: 24px;
     background-color: rgb(99, 104, 247);
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
     display: flex;
-    width: 270px;
+    height: 25px;
+    width: 400px;
 }
 
 #subsaga4 {
-    top: 852px;
-    left: 115px;
-    font-size: 16px;
+    top: 1251px;
+    right: 1340px;
+    font-size: 24px;
     background-color: rgb(99, 104, 247);
     border: 2px solid rgb(239, 242, 255);
     text-align: center;
-    width: 270px;
+    width: 400px;
+    height: 25px;
     display: flex;
 }
+
+/*Botones + sus imagenes*/
 
 .button {
     color: rgba(255, 255, 255, 0);
@@ -169,14 +263,14 @@
     display:flexbox;
     font-size: 16px;
     border-radius:50%;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border: 2px solid rgb(255, 112, 112);
     position: relative;
     display: flex;
 }
 
-/*PARA E2*/
+/*/*POSIBLE USO PARA E2 (ACTIVACION DE BOTONES)*/
 
 /* .button:hover {
 }
@@ -185,50 +279,75 @@
 } */
 
 #esfera1 {
-    top: -425px;
-    left: 425px;
+    top: 295px;
+    right: 1150px;
     background-image: url(esf1.png);
     background-position: center;
     background-size: cover;
+    position: absolute;
     display: flex;
 }
 
 #esfera2 {
-    top: -310px;
-    left: 425px;
+    top: 575px;
+    right: 1150px;
     background-image: url(esf2.png);
     background-position: center;
     background-size: cover;
+    position: absolute;
     display: flex;
 }
 
 #esfera3 {
-    top: -190px;
-    left: 425px;
+    top: 855px;
+    right: 1150px;
     background-image: url(esf3.png);
     background-position: center;
     background-size: cover;
+    position: absolute;
     display: flex;
 }
 
 #esfera4 {
-    top: -70px;
-    left: 425px;
+    top: 1135px;
+    right: 1150px;
     background-image: url(esf4.png);
     background-position: center;
     background-size: cover;
+    position: absolute;
     display: flex;
 }
 
-body {
-    background-color: rgb(99, 104, 247);
-    position: relative
-}
+/*Gráficos*/
 
 #barchart {
     position:absolute;
-    top: 248px;
-    right: 100px;
-    border: 5px solid rgb(62, 65, 164);
+    top: 216px;
+    right: 75px;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+}
+
+#barchart1 {
+    position:absolute;
+    top: 489px;
+    right: 75px;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+}
+
+#barchart2 {
+    position:absolute;
+    top: 760px;
+    right: 75px;
+    border: 5px solid rgba(255, 251, 0, 0.575);
+    display: flex;
+}
+
+#barchart3 {
+    position:absolute;
+    top: 1033px;
+    right: 75px;
+    border: 5px solid rgba(255, 251, 0, 0.575);
     display: flex;
 }
