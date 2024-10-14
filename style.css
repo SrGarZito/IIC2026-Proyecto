@@ -13,34 +13,6 @@
 
 /*Cuerpo del sitio web*/
 
-@media (max-width: 768px) {
-    /* Cambiar el contenedor para que use el 100% de ancho */
-    .container {
-        flex-direction: column; /* Organizar elementos en columna */
-        padding: 10px;         /* Ajustar el padding */
-    }
-
-    /* Ajustar posiciones de elementos absolutos */
-    #fondo1, #fondo2, #enlace1, #enlace2, #enlace3, #enlace4 {
-        position: relative; /* Cambiar a posición relativa */
-        width: 100%;        /* Tomar el ancho completo */
-        margin: 10px 0;    /* Espacio entre elementos */
-    }
-
-    /* Ajustar el tamaño de los botones */
-    .button {
-        width: 80px;       /* Tamaño más pequeño para móviles */
-        height: 80px;
-    }
-
-    /* Ajustar el tamaño de los títulos */
-    #titulo, #subtitulo1, #subtitulo2, #subtitulo3 {
-        font-size: 24px;   /* Tamaño de fuente más pequeño */
-        width: 100%;       /* Asegurar que ocupen el ancho completo */
-        text-align: center; /* Centrar el texto */
-    }
-}
-
 body {
     background-color: rgb(99, 104, 247);
     position: relative
@@ -121,10 +93,10 @@ body {
 #foto1 {
     background-color: rgb(90, 144, 242);
     position: absolute;
-    border: 5px solid rgba(255, 251, 0, 0.575);
-    right: 658px;
-    top: 216px;
-    background-image: url(freezer.jpg);
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 1350px;
+    top: 680px;
+    background-image: url(n1.jpg);
     background-size: cover;
     display: flex;
 }
@@ -132,10 +104,10 @@ body {
 #foto2 {
     background-color: rgb(90, 144, 242);
     position: absolute;
-    border: 5px solid rgba(255, 251, 0, 0.575);
-    right: 658px;
-    top: 489px;
-    background-image: url(goku.jpg);
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 950px;
+    top: 680px;
+    background-image: url(n2.jpg);
     background-size: cover;
     display: flex;
 }
@@ -143,10 +115,10 @@ body {
 #foto3 {
     background-color: rgb(90, 144, 242);
     position: absolute;
-    border: 5px solid rgba(255, 251, 0, 0.575);
-    right: 658px;
-    top: 759px;
-    background-image: url(vegeta.jpg);
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 550px;
+    top: 680px;
+    background-image: url(n3.jpg);
     background-size: cover;
     display: flex;
 }
@@ -154,10 +126,10 @@ body {
 #foto4 {
     background-color: rgb(90, 144, 242);
     position: absolute;
-    border: 5px solid rgba(255, 251, 0, 0.575);
-    right: 658px;
-    top: 1033px;
-    background-image: url(gokussj.jpg);
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 150px;
+    top: 680px;
+    background-image: url(n4.jpg);
     background-size: cover;
     display: flex;
 }
@@ -188,11 +160,12 @@ body {
 
 #subtitulo1 {
     top: 140px;
-    right: 1115px;
+    right: 435px;
     font-size: 32px;
     background-color: rgb(99, 104, 247);
     /* border: 5px solid rgb(62, 65, 164); */
-    width: 645px;
+    width: 1000px;
+    height: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -305,8 +278,8 @@ body {
     display:flexbox;
     font-size: 16px;
     border-radius:50%;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border: 2px solid rgb(255, 112, 112);
     position: relative;
     display: flex;
@@ -321,8 +294,8 @@ body {
 } */
 
 #esfera1 {
-    top: 295px;
-    right: 1150px;
+    top: 200px;
+    right: 1670px;
     background-image: url(esf1.png);
     background-position: center;
     background-size: cover;
@@ -331,8 +304,8 @@ body {
 }
 
 #esfera2 {
-    top: 575px;
-    right: 1150px;
+    top: 200px;
+    right: 1270px;
     background-image: url(esf2.png);
     background-position: center;
     background-size: cover;
@@ -341,8 +314,8 @@ body {
 }
 
 #esfera3 {
-    top: 855px;
-    right: 1150px;
+    top: 200px;
+    right: 870px;
     background-image: url(esf3.png);
     background-position: center;
     background-size: cover;
@@ -351,8 +324,8 @@ body {
 }
 
 #esfera4 {
-    top: 1135px;
-    right: 1150px;
+    top: 200px;
+    right: 470px;
     background-image: url(esf4.png);
     background-position: center;
     background-size: cover;
@@ -364,32 +337,32 @@ body {
 
 #barchart {
     position:absolute;
-    top: 216px;
-    right: 75px;
-    border: 5px solid rgba(255, 251, 0, 0.575);
+    top: 220px;
+    right: 1350px;
     display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
 }
 
 #barchart1 {
     position:absolute;
-    top: 489px;
-    right: 75px;
-    border: 5px solid rgba(255, 251, 0, 0.575);
+    top: 220px;
+    right: 950px;
     display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
 }
 
 #barchart2 {
     position:absolute;
-    top: 760px;
-    right: 75px;
-    border: 5px solid rgba(255, 251, 0, 0.575);
+    top: 220px;
+    right: 550px;
     display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
 }
 
 #barchart3 {
     position:absolute;
-    top: 1033px;
-    right: 75px;
-    border: 5px solid rgba(255, 251, 0, 0.575);
+    top: 220px;
+    right: 150px;
     display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
 }

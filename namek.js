@@ -11,8 +11,8 @@ function namek(){
 
 function fondo1(){
     let SVG = document.getElementById("fondo1");
-    SVG.setAttribute("width", "1000");
-    SVG.setAttribute("height", "1220");
+    SVG.setAttribute("width", "1735");
+    SVG.setAttribute("height", "800");
 }
 
 function fondo2(){
@@ -57,26 +57,26 @@ function enlace4(){
 
 function foto1(){
     let SVG = document.getElementById("foto1");
-    SVG.setAttribute("width", "360");
-    SVG.setAttribute("height", "250");
+    SVG.setAttribute("width", "350");
+    SVG.setAttribute("height", "150");
 }
 
 function foto2(){
     let SVG = document.getElementById("foto2");
-    SVG.setAttribute("width", "360");
-    SVG.setAttribute("height", "250");
+    SVG.setAttribute("width", "350");
+    SVG.setAttribute("height", "150");
 }
 
 function foto3(){
     let SVG = document.getElementById("foto3");
-    SVG.setAttribute("width", "360");
-    SVG.setAttribute("height", "250");
+    SVG.setAttribute("width", "350");
+    SVG.setAttribute("height", "150");
 }
 
 function foto4(){
     let SVG = document.getElementById("foto4");
-    SVG.setAttribute("width", "360");
-    SVG.setAttribute("height", "250");
+    SVG.setAttribute("width", "350");
+    SVG.setAttribute("height", "150");
 }
 
 //Creación de los gráficos//
@@ -113,28 +113,38 @@ function graf1() {
         document.body.appendChild(nuevoDiv);
 
         const trace = {
-            x: data.char,
-            y: data.power,
+            x: data.power,
+            y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(211, 104, 255, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
-                    'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
+                color: [
+                    'rgba(255, 113, 113, 1)', 'rgba(93, 164, 255, 1)', 'rgba(255, 154, 93, 1)', 'rgba(93, 103, 255, 1)',
+                    'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)',
+                    'rgba(93, 164, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)',
+                    'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)',
+                    'rgba(93, 103, 255, 1)',  'rgba(93, 103, 255, 1)']
             },
-            width:0.5
+            width:0.5,
+            orientation: 'h',
+            name: 'Poder base'
         };
         
         const layout = {
             title: {
                 text:'Saga de Namek',
                 font: {
-                    size: 24, // Tamaño de la fuente
-                    color: 'black' // Color de la fuente
+                    size: 18,
+                    color: 'black'
             }},
-            width: '540',
-            height: '250',
-            yaxis: {
+            width: '350',
+            height: '450',
+            barmode: 'overlay',
+            xaxis: {
                 title: "Cantidad de ki"
-            }
+            },
+            Image: [{
+
+            }]
         };
 
         Plotly.newPlot('barchart', [trace], layout);
@@ -173,26 +183,31 @@ function graf2() {
         document.body.appendChild(nuevoDiv);
 
         const trace = {
-            x: data.char,
-            y: data.power,
+            x: data.power,
+            y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(255, 153, 106, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
-                    'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
+                color: ['rgba(93, 164, 255, 1)', 'rgba(255, 154, 93, 1)', 'rgba(255, 154, 93, 1)', 'rgba(255, 113, 113, 1)',
+                        'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 218, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)',
+                        'rgba(93, 218, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)',
+                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
             },
-            width:0.5
+            width:0.5,
+            orientation: 'h',
+            name: 'Poder base'
         };
         
         const layout = {
             title: {
                 text:'Saga de las Fuerzas Especiales Ginyu',
                 font: {
-                    size: 24, // Tamaño de la fuente
-                    color: 'black' // Color de la fuente
+                    size: 18,
+                    color: 'black'
             }},
-            width: '540',
-            height: '250',
-            yaxis: {
+            width: '350',
+            height: '450',
+            barmode: 'overlay',
+            xaxis: {
                 title: "Cantidad de ki"
             }
         };
@@ -233,26 +248,30 @@ function graf3() {
         document.body.appendChild(nuevoDiv);
 
         const trace = {
-            x: data.char,
-            y: data.power,
+            x: data.power,
+            y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(135, 145, 255, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
-                    'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
+                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 221, 92, 1)',
+                        'rgba(93, 218, 255, 1)', 'rgba(255, 194, 92, 1)', 'rgba(255, 154, 93, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)',
+                        'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
             },
-            width:0.5
+            width:0.5,
+            orientation: 'h',
+            name: 'Poder base'
         };
         
         const layout = {
             title: {
                 text:'Saga del Capitán Ginyu',
                 font: {
-                    size: 24, // Tamaño de la fuente
-                    color: 'black' // Color de la fuente
+                    size: 18,
+                    color: 'black'
             }},
-            width: '540',
-            height: '250',
-            yaxis: {
+            width: '350',
+            height: '450',
+            barmode: 'overlay',
+            xaxis: {
                 title: "Cantidad de ki"
             }
         };
@@ -291,30 +310,40 @@ function graf4() {
 
         // Insertar el nuevo div dentro de un contenedor existente
         document.body.appendChild(nuevoDiv);
-
+        //19, 14, 12, 19, 7, 6, 5, 4, 3
         const trace = {
-            x: data.char,
-            y: data.power,
+            x: data.power,
+            y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(255, 255, 148, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)',
-                    'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)', 'rgba(182, 182, 182, 0.8)']
+                color: ['rgba(93, 218, 255, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 248, 92, 1)', 'rgba(255, 221, 92, 1)', 'rgba(255, 194, 92, 1)',
+                        'rgba(255, 154, 93, 1)', 'rgba(255, 113, 113, 1)', 'rgba(104, 255, 179, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 154, 93, 1)', //10
+                        'rgba(93, 218, 255, 1)', 'rgba(255, 194, 92, 1)', 'rgba(93, 164, 255, 1)', 'rgba(255, 221, 92, 1)', 'rgba(93, 255, 241, 1)',
+                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 218, 255, 1)', 'rgba(255, 248, 92, 1)', 'rgba(93, 255, 241, 1)', //20
+                        'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(104, 255, 179, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 255, 241, 1)',
+                        'rgba(104, 255, 179, 1)', 'rgba(255, 221, 92, 1)', 'rgba(93, 255, 241, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 194, 92, 1)', //30
+                        'rgba(93, 218, 255, 1)', 'rgba(255, 154, 93, 1)', 'rgba(93, 218, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)',
+                        'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', //40
+                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
             },
-            width:0.5
+            width:0.5,
+            orientation: 'h',
+            name: 'Poder base'
         };
         
         const layout = {
             title: {
                 text:'Saga de Freezer',
                 font: {
-                    size: 24, // Tamaño de la fuente
-                    color: 'black' // Color de la fuente
+                    size: 18,
+                    color: 'black'
             }},
-            width: '540',
-            height: '250',
-            yaxis: {
+            width: '350',
+            height: '450',
+            barmode: 'overlay',
+            xaxis: {
                 title: "Cantidad de ki"
-            }
+            },
         };
 
         Plotly.newPlot('barchart3', [trace], layout);
@@ -324,17 +353,17 @@ function graf4() {
 
 //Función de activación//
 function activartodo(){
-    namek();
+    // namek();
     graf1();
     graf2();
     graf3();
     graf4();
     fondo1();
-    fondo2();
-    enlace1();
-    enlace2();
-    enlace3();
-    enlace4();
+    //fondo2();
+    // enlace1();
+    // enlace2();
+    // enlace3();
+    // enlace4();
     foto1();
     foto2();
     foto3();
