@@ -118,15 +118,36 @@ function graf1() {
             type: 'bar',
             marker: {
                 color: [
-                    'rgba(255, 113, 113, 1)', 'rgba(93, 164, 255, 1)', 'rgba(255, 154, 93, 1)', 'rgba(93, 103, 255, 1)',
-                    'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)',
-                    'rgba(93, 164, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)',
-                    'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)',
-                    'rgba(93, 103, 255, 1)',  'rgba(93, 103, 255, 1)']
+                    'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)',
+                    'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)',
+                    'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1))',
+                    'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
             },
             width:0.5,
             orientation: 'h',
-            name: 'Poder base'
+            showlegend: false
+        };
+
+        const tracefantasma = {
+            x: data.power,
+            y: data.char,
+            name: 'Buenos',
+            type: 'bar',
+            marker: {
+                color: 'blue'
+            },
+            visible: 'legendonly'
+        };
+
+        const tracefantasma2 = {
+            x: data.power,
+            y: data.char,
+            name: 'Villanos',
+            type: 'bar', 
+            marker: {
+                color: 'red'
+            },
+            visible: 'legendonly'
         };
         
         const layout = {
@@ -142,12 +163,15 @@ function graf1() {
             xaxis: {
                 title: "Cantidad de ki"
             },
-            Image: [{
-
-            }]
+            legend: {
+                font: {
+                    size: 14,
+                    color: 'black'
+                }
+            }
         };
 
-        Plotly.newPlot('barchart', [trace], layout);
+        Plotly.newPlot('barchart', [trace, tracefantasma, tracefantasma2], layout);
     });
 }
 
@@ -187,14 +211,34 @@ function graf2() {
             y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(93, 164, 255, 1)', 'rgba(255, 154, 93, 1)', 'rgba(255, 154, 93, 1)', 'rgba(255, 113, 113, 1)',
-                        'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 218, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)',
-                        'rgba(93, 218, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)',
-                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
+                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)',
+                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)']
             },
             width:0.5,
             orientation: 'h',
-            name: 'Poder base'
+            showlegend: false
+        };
+
+        const tracefantasma = {
+            x: data.power,
+            y: data.char,
+            name: 'Buenos',
+            type: 'bar',
+            marker: {
+                color: 'blue'
+            },
+            visible: 'legendonly'
+        };
+
+        const tracefantasma2 = {
+            x: data.power,
+            y: data.char,
+            name: 'Villanos',
+            type: 'bar', 
+            marker: {
+                color: 'red'
+            },
+            visible: 'legendonly'
         };
         
         const layout = {
@@ -209,10 +253,16 @@ function graf2() {
             barmode: 'overlay',
             xaxis: {
                 title: "Cantidad de ki"
+            },
+            legend: {
+                font: {
+                    size: 14,
+                    color: 'black'
+                }
             }
         };
 
-        Plotly.newPlot('barchart1', [trace], layout);
+        Plotly.newPlot('barchart1', [trace, tracefantasma, tracefantasma2], layout);
     });
 }
 
@@ -252,13 +302,34 @@ function graf3() {
             y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 221, 92, 1)',
-                        'rgba(93, 218, 255, 1)', 'rgba(255, 194, 92, 1)', 'rgba(255, 154, 93, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)',
-                        'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
+                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)',
+                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
             },
             width:0.5,
             orientation: 'h',
-            name: 'Poder base'
+            showlegend: false
+        };
+
+        const tracefantasma = {
+            x: data.power,
+            y: data.char,
+            name: 'Buenos',
+            type: 'bar',
+            marker: {
+                color: 'blue'
+            },
+            visible: 'legendonly'
+        };
+
+        const tracefantasma2 = {
+            x: data.power,
+            y: data.char,
+            name: 'Villanos',
+            type: 'bar', 
+            marker: {
+                color: 'red'
+            },
+            visible: 'legendonly'
         };
         
         const layout = {
@@ -273,10 +344,16 @@ function graf3() {
             barmode: 'overlay',
             xaxis: {
                 title: "Cantidad de ki"
+            },
+            legend: {
+                font: {
+                    size: 14,
+                    color: 'black'
+                }
             }
         };
 
-        Plotly.newPlot('barchart2', [trace], layout);
+        Plotly.newPlot('barchart2', [trace, tracefantasma, tracefantasma2], layout);
     });
 }
 
@@ -316,19 +393,34 @@ function graf4() {
             y: data.char,
             type: 'bar',
             marker: {
-                color: ['rgba(93, 218, 255, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 248, 92, 1)', 'rgba(255, 221, 92, 1)', 'rgba(255, 194, 92, 1)',
-                        'rgba(255, 154, 93, 1)', 'rgba(255, 113, 113, 1)', 'rgba(104, 255, 179, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 154, 93, 1)', //10
-                        'rgba(93, 218, 255, 1)', 'rgba(255, 194, 92, 1)', 'rgba(93, 164, 255, 1)', 'rgba(255, 221, 92, 1)', 'rgba(93, 255, 241, 1)',
-                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 218, 255, 1)', 'rgba(255, 248, 92, 1)', 'rgba(93, 255, 241, 1)', //20
-                        'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(104, 255, 179, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 255, 241, 1)',
-                        'rgba(104, 255, 179, 1)', 'rgba(255, 221, 92, 1)', 'rgba(93, 255, 241, 1)', 'rgba(93, 255, 241, 1)', 'rgba(255, 194, 92, 1)', //30
-                        'rgba(93, 218, 255, 1)', 'rgba(255, 154, 93, 1)', 'rgba(93, 218, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)',
-                        'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 164, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', //40
-                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
+                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)',
+                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
             },
             width:0.5,
             orientation: 'h',
-            name: 'Poder base'
+            showlegend: false
+        };
+
+        const tracefantasma = {
+            x: data.power,
+            y: data.char,
+            name: 'Buenos',
+            type: 'bar',
+            marker: {
+                color: 'blue'
+            },
+            visible: 'legendonly'
+        };
+
+        const tracefantasma2 = {
+            x: data.power,
+            y: data.char,
+            name: 'Villanos',
+            type: 'bar', 
+            marker: {
+                color: 'red'
+            },
+            visible: 'legendonly'
         };
         
         const layout = {
@@ -344,9 +436,15 @@ function graf4() {
             xaxis: {
                 title: "Cantidad de ki"
             },
+            legend: {
+                font: {
+                    size: 14,
+                    color: 'black'
+                }
+            }
         };
 
-        Plotly.newPlot('barchart3', [trace], layout);
+        Plotly.newPlot('barchart3', [trace, tracefantasma, tracefantasma2], layout);
     });
 }
 
