@@ -1,0 +1,370 @@
+/* Light mode por defecto*/
+
+/*Imagen de las etapas de Namekusei*/
+#namek {
+    /* border: 5px solid rgb(62, 65, 164); */
+    background: url('namekmap.jpg');
+    position: absolute;
+    background-size: cover;
+    right: 1115px;
+    top: 200px;
+    display: flex;
+}
+
+/*Cuerpo del sitio web*/
+
+body {
+    background-color: rgb(49, 162, 222);
+    position: relative
+}
+
+/*Fondos que permiten agregar estilo*/
+#fondo1 {
+    /* background-color: rgb(115, 161, 247); */
+    position: absolute;
+    /* border: 6px solid rgb(62, 65, 164); */
+    display: flex;
+    right: 50px;
+    top: 115px;
+    border-radius: 30px;
+}
+
+#fondo2 {
+    /* background-color: rgb(115, 161, 247); */
+    position: absolute;
+    right: 1085px;
+    top: 115px;
+    /* border: 6px solid rgb(62, 65, 164); */
+    display: flex;
+    width: 700px;
+    height: 1220px;
+    border-radius: 30px;
+}
+
+#enlace1 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    /* border: 6px solid rgba(255, 251, 0, 0.575); */
+    display: flex;
+    right: 500px;
+    top: 285px;
+}
+
+#enlace2 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    /* border: 6px solid rgba(255, 251, 0, 0.575); */
+    display: flex;
+    right: 500px;
+    top: 567px;
+}
+
+#enlace3 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    /* border: 6px solid rgba(255, 251, 0, 0.575); */
+    display: flex;
+    right: 500px;
+    top: 845px;
+}
+
+#enlace4 {
+    background-color: rgba(255, 153, 0, 0.568);
+    position: absolute;
+    /* border: 6px solid rgba(255, 251, 0, 0.575); */
+    display: flex;
+    right: 500px;
+    top: 1123px;
+}
+
+/*POSIBLE USO PARA E2*/
+
+/* #fondo3 {
+    background-color: rgb(99, 104, 247);
+    position: absolute;
+    left: 643px;
+    top: 736px;
+    width: 1110px;
+    border: 6px solid rgb(62, 65, 164);
+    display: flex;
+} */
+
+/*Imagenes de los personajes*/
+#foto1 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 1350px;
+    top: 680px;
+    background-image: url(n1.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#foto2 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 950px;
+    top: 680px;
+    background-image: url(n2.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#foto3 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 550px;
+    top: 680px;
+    background-image: url(n3.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+#foto4 {
+    background-color: rgb(90, 144, 242);
+    position: absolute;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+    right: 150px;
+    top: 680px;
+    background-image: url(n4.jpg);
+    background-size: cover;
+    display: flex;
+}
+
+/*Label de titulos y subtitulos*/
+
+.title {
+    color: rgb(239, 242, 255);
+    font-weight: bold;
+    margin-bottom: 20px;
+    align-items: center;
+    position: absolute;
+    display: flex;
+}
+
+#titulo {
+    top: 10px;
+    right: 50px;
+    font-size: 56px;
+    font-family: sans-serif;
+    /* background-color: rgb(115, 161, 247); */
+    /* border: 6px solid rgb(62, 65, 164); */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 1755px;
+    border-radius: 30px;
+}
+
+#subtitulo1 {
+    top: 140px;
+    right: 435px;
+    font-size: 32px;
+    /* background-color: rgb(99, 104, 247); */
+    /* border: 5px solid rgb(62, 65, 164); */
+    width: 970px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: sans-serif;
+    border-radius: 30px;
+}
+
+#subtitulo2 {
+    top: 140px;
+    right: 658px;
+    font-size: 32px;
+    background-color: rgb(99, 104, 247);
+    /* border: 5px solid rgb(62, 65, 164); */
+    width: 370px;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    border-radius: 30px;
+}
+
+#subtitulo3 {
+    top: 140px;
+    right: 75px;
+    font-size: 32px;
+    background-color: rgb(99, 104, 247);
+    /* border: 5px solid rgb(62, 65, 164); */
+    width: 550px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-radius: 30px;
+}
+
+/*POSIBLE USO PARA E2*/
+
+/* #sinopsis {
+    top: 760px;
+    right: 160px;
+    font-size: 20px;
+    width: 1010px;
+    text-align:justify;
+    display: flex;
+} */
+
+/*SubSagas puestos en palabras*/
+
+#subsaga1 {
+    top: 435px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    height: 25px;
+    display: flex;
+    border-radius: 30px;
+}
+
+#subsaga2 {
+    top: 710px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    height: 25px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+#subsaga3 {
+    top: 979px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    height: 25px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+#subsaga4 {
+    top: 1251px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    height: 25px;
+    display: flex;
+    border-radius: 30px;
+}
+
+/*Botones + sus imagenes*/
+
+.button {
+    color: rgba(255, 255, 255, 0);
+    padding: 12px 22px;
+    text-align: center;
+    text-decoration: none;
+    display:flexbox;
+    font-size: 16px;
+    border-radius:50%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(255, 112, 112);
+    position: relative;
+    display: flex;
+}
+
+/*/*POSIBLE USO PARA E2 (ACTIVACION DE BOTONES)*/
+
+/* .button:hover {
+}
+
+.button:active {
+} */
+
+#esfera1 {
+    top: 200px;
+    right: 1670px;
+    background-image: url(esf1.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+
+#esfera2 {
+    top: 200px;
+    right: 1270px;
+    background-image: url(esf2.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+
+#esfera3 {
+    top: 200px;
+    right: 870px;
+    background-image: url(esf3.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+
+#esfera4 {
+    top: 200px;
+    right: 470px;
+    background-image: url(esf4.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+
+/*Gráficos*/
+
+#barchart {
+    position:absolute;
+    top: 220px;
+    right: 1350px;
+    display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+}
+
+#barchart1 {
+    position:absolute;
+    top: 220px;
+    right: 950px;
+    display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+}
+
+#barchart2 {
+    position:absolute;
+    top: 220px;
+    right: 550px;
+    display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+}
+
+#barchart3 {
+    position:absolute;
+    top: 220px;
+    right: 150px;
+    display: flex;
+    border: 5px solid rgba(255, 163, 87, 0.685);
+}
