@@ -1,12 +1,3 @@
-
-//Creación del mapa de sagas de Namek//
-
-function namek(){
-    let SVG = document.getElementById("namek");
-    SVG.setAttribute("width", "645");
-    SVG.setAttribute("height", "1108");
-}
-
 //Creación de los fondos rectangulares//
 
 function fondo1(){
@@ -14,44 +5,6 @@ function fondo1(){
     SVG.setAttribute("width", "1735");
     SVG.setAttribute("height", "800");
 }
-
-function fondo2(){
-    let SVG = document.getElementById("fondo2");
-    SVG.setAttribute("width", "500");
-    SVG.setAttribute("height", "800");
-}
-
-function enlace1(){
-    let SVG = document.getElementById("enlace1");
-    SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "120");
-}
-
-function enlace2(){
-    let SVG = document.getElementById("enlace2");
-    SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "120");
-}
-
-function enlace3(){
-    let SVG = document.getElementById("enlace3");
-    SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "120");
-}
-
-function enlace4(){
-    let SVG = document.getElementById("enlace4");
-    SVG.setAttribute("width", "700");
-    SVG.setAttribute("height", "120");
-}
-
-// POSIBLE USO PARA E2//
-
-// function fondo3(){
-//     let SVG = document.getElementById("fondo3");
-//     SVG.setAttribute("width", "500");
-//     SVG.setAttribute("height", "800");
-// }
 
 //Creación de los SVG de imagenes//
 
@@ -125,7 +78,8 @@ function graf1() {
             },
             width:0.5,
             orientation: 'h',
-            showlegend: false
+            showlegend: false,
+            name: ''
         };
 
         const tracefantasma = {
@@ -142,7 +96,7 @@ function graf1() {
         const tracefantasma2 = {
             x: data.power,
             y: data.char,
-            name: 'Villanos',
+            name: 'Malos',
             type: 'bar', 
             marker: {
                 color: 'red'
@@ -216,7 +170,8 @@ function graf2() {
             },
             width:0.5,
             orientation: 'h',
-            showlegend: false
+            showlegend: false,
+            name: ''
         };
 
         const tracefantasma = {
@@ -233,7 +188,7 @@ function graf2() {
         const tracefantasma2 = {
             x: data.power,
             y: data.char,
-            name: 'Villanos',
+            name: 'Malos',
             type: 'bar', 
             marker: {
                 color: 'red'
@@ -307,7 +262,8 @@ function graf3() {
             },
             width:0.5,
             orientation: 'h',
-            showlegend: false
+            showlegend: false,
+            name: ''
         };
 
         const tracefantasma = {
@@ -324,7 +280,7 @@ function graf3() {
         const tracefantasma2 = {
             x: data.power,
             y: data.char,
-            name: 'Villanos',
+            name: 'Malos',
             type: 'bar', 
             marker: {
                 color: 'red'
@@ -398,7 +354,8 @@ function graf4() {
             },
             width:0.5,
             orientation: 'h',
-            showlegend: false
+            showlegend: false,
+            name: ''
         };
 
         const tracefantasma = {
@@ -415,7 +372,7 @@ function graf4() {
         const tracefantasma2 = {
             x: data.power,
             y: data.char,
-            name: 'Villanos',
+            name: 'Malos',
             type: 'bar', 
             marker: {
                 color: 'red'
@@ -451,17 +408,11 @@ function graf4() {
 
 //Función de activación//
 function activartodo(){
-    // namek();
     graf1();
     graf2();
     graf3();
     graf4();
     fondo1();
-    //fondo2();
-    // enlace1();
-    // enlace2();
-    // enlace3();
-    // enlace4();
     foto1();
     foto2();
     foto3();
