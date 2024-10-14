@@ -4,25 +4,23 @@
 #namek {
     /* border: 5px solid rgb(62, 65, 164); */
     background: url('namekmap.jpg');
-    position: relative;
+    position: absolute;
     background-size: cover;
-    right: auto;
-    top: auto;
-    bottom: auto;
-    left: auto;
+    right: 1115px;
+    top: 200px;
     display: flex;
 }
 
 /*Cuerpo del sitio web*/
 
 body {
-    background-color: rgb(49, 162, 222);
+    background-color: rgb(99, 104, 247);
     position: relative
 }
 
 /*Fondos que permiten agregar estilo*/
 #fondo1 {
-    /* background-color: rgb(115, 161, 247); */
+    background-color: rgb(115, 161, 247);
     position: absolute;
     /* border: 6px solid rgb(62, 65, 164); */
     display: flex;
@@ -32,7 +30,7 @@ body {
 }
 
 #fondo2 {
-    /* background-color: rgb(115, 161, 247); */
+    background-color: rgb(115, 161, 247);
     position: absolute;
     right: 1085px;
     top: 115px;
@@ -94,12 +92,10 @@ body {
 /*Imagenes de los personajes*/
 #foto1 {
     background-color: rgb(90, 144, 242);
+    position: absolute;
     border: 5px solid rgba(255, 163, 87, 0.685);
-    position:fixed;
-    top: 55%;
-    left: 35%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    right: 1350px;
+    top: 680px;
     background-image: url(n1.jpg);
     background-size: cover;
     display: flex;
@@ -107,12 +103,10 @@ body {
 
 #foto2 {
     background-color: rgb(90, 144, 242);
+    position: absolute;
     border: 5px solid rgba(255, 163, 87, 0.685);
-    position:fixed;
-    top: 55%;
-    left: 45%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    right: 950px;
+    top: 680px;
     background-image: url(n2.jpg);
     background-size: cover;
     display: flex;
@@ -120,12 +114,10 @@ body {
 
 #foto3 {
     background-color: rgb(90, 144, 242);
+    position: absolute;
     border: 5px solid rgba(255, 163, 87, 0.685);
-    position:fixed;
-    top: 55%;
-    left: 55%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    right: 550px;
+    top: 680px;
     background-image: url(n3.jpg);
     background-size: cover;
     display: flex;
@@ -133,12 +125,10 @@ body {
 
 #foto4 {
     background-color: rgb(90, 144, 242);
+    position: absolute;
     border: 5px solid rgba(255, 163, 87, 0.685);
-    position:fixed;
-    top: 55%;
-    left: 65%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    right: 150px;
+    top: 680px;
     background-image: url(n4.jpg);
     background-size: cover;
     display: flex;
@@ -156,37 +146,29 @@ body {
 }
 
 #titulo {
-    position:fixed;
-    top: 20%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    font-size: 56px;
-    font-family: sans-serif;
-    /* background-color: rgb(115, 161, 247); */
+    top: 10px;
+    right: 50px;
+    font-size: 64px;
+    background-color: rgb(115, 161, 247);
     /* border: 6px solid rgb(62, 65, 164); */
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 1755px;
+    width: 1735px;
     border-radius: 30px;
 }
 
 #subtitulo1 {
-    position:fixed;
-    top: 25%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    top: 140px;
+    right: 435px;
     font-size: 32px;
-    /* background-color: rgb(99, 104, 247); */
+    background-color: rgb(99, 104, 247);
     /* border: 5px solid rgb(62, 65, 164); */
-    width: 970px;
+    width: 1000px;
     height: 50px;
     justify-content: center;
     align-items: center;
     display: flex;
-    font-family: sans-serif;
     border-radius: 30px;
 }
 
@@ -230,6 +212,61 @@ body {
 
 /*SubSagas puestos en palabras*/
 
+#subsaga1 {
+    top: 435px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    height: 25px;
+    display: flex;
+    border-radius: 30px;
+}
+
+#subsaga2 {
+    top: 710px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    height: 25px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+#subsaga3 {
+    top: 979px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    height: 25px;
+    width: 400px;
+    border-radius: 30px;
+}
+
+#subsaga4 {
+    top: 1251px;
+    right: 1340px;
+    font-size: 24px;
+    background-color: rgb(99, 104, 247);
+    border: 2px solid rgb(239, 242, 255);
+    text-align: center;
+    justify-content: center;
+    width: 400px;
+    height: 25px;
+    display: flex;
+    border-radius: 30px;
+}
 
 /*Botones + sus imagenes*/
 
@@ -257,91 +294,75 @@ body {
 } */
 
 #esfera1 {
-    top: 29.5%;
-    left: 39%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-image: url(esf4.png);
+    top: 200px;
+    right: 1670px;
+    background-image: url(esf1.png);
     background-position: center;
     background-size: cover;
-    position:fixed;
+    position: absolute;
     display: flex;
 }
 
 #esfera2 {
-    top: 29.5%;
-    left: 49%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-image: url(esf4.png);
+    top: 200px;
+    right: 1270px;
+    background-image: url(esf2.png);
     background-position: center;
     background-size: cover;
-    position:fixed;
+    position: absolute;
     display: flex;
 }
 
 #esfera3 {
-    top: 29.5%;
-    left: 59%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    background-image: url(esf4.png);
+    top: 200px;
+    right: 870px;
+    background-image: url(esf3.png);
     background-position: center;
     background-size: cover;
-    position:fixed;
+    position: absolute;
     display: flex;
 }
 
 #esfera4 {
-    top: 29.5%;
-    left: 69%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    top: 200px;
+    right: 470px;
     background-image: url(esf4.png);
     background-position: center;
     background-size: cover;
-    position:fixed;
+    position: absolute;
     display: flex;
 }
 
 /*Gráficos*/
 
 #barchart {
-    position:fixed;
-    top: 40%;
-    left: 35%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top: 220px;
+    right: 1350px;
     display: flex;
     border: 5px solid rgba(255, 163, 87, 0.685);
 }
 
 #barchart1 {
-    position:fixed;
-    top: 40%;
-    left: 45%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top: 220px;
+    right: 950px;
     display: flex;
     border: 5px solid rgba(255, 163, 87, 0.685);
 }
 
 #barchart2 {
-    position:fixed;
-    top: 40%;
-    left: 55%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top: 220px;
+    right: 550px;
     display: flex;
     border: 5px solid rgba(255, 163, 87, 0.685);
 }
 
 #barchart3 {
-    position:fixed;
-    top: 40%;
-    left: 65%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    position:absolute;
+    top: 220px;
+    right: 150px;
     display: flex;
     border: 5px solid rgba(255, 163, 87, 0.685);
 }
