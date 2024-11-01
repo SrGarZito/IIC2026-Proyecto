@@ -1,3 +1,12 @@
+
+//Creación del mapa de sagas de Namek//
+
+function namek(){
+    let SVG = document.getElementById("namek");
+    SVG.setAttribute("width", "645");
+    SVG.setAttribute("height", "1108");
+}
+
 //Creación de los fondos rectangulares//
 
 function fondo1(){
@@ -6,38 +15,10 @@ function fondo1(){
     SVG.setAttribute("height", "800");
 }
 
-//Creación de los SVG de imagenes//
-
-function foto1(){
-    let SVG = document.getElementById("foto1");
-    SVG.setAttribute("width", "350");
-    SVG.setAttribute("height", "150");
-}
-
-function foto2(){
-    let SVG = document.getElementById("foto2");
-    SVG.setAttribute("width", "350");
-    SVG.setAttribute("height", "150");
-}
-
-function foto3(){
-    let SVG = document.getElementById("foto3");
-    SVG.setAttribute("width", "350");
-    SVG.setAttribute("height", "150");
-}
-
-function foto4(){
-    let SVG = document.getElementById("foto4");
-    SVG.setAttribute("width", "350");
-    SVG.setAttribute("height", "150");
-}
-
-//Creación de los gráficos//
-
-//Gráfico N°1//
+//Creación del gráfico//
 
 async function fetchData1() {
-    const response = await fetch('./namek.csv');
+    const response = await fetch('./df.csv');
     const data = await response.text();
     
     // Dividir los datos por líneas
@@ -45,363 +26,277 @@ async function fetchData1() {
     
     const char = [];
     const power = [];
+    const saga = [];
     
     rows.forEach(row => {
         const cols = row.split(',');
         char.push((cols[1]));
         power.push(parseFloat(cols[2]));
+        saga.push(cols[3])
     });
 
-    return { char, power };
+    return { char, power, saga };
 };
 
 function graf1() {
     fetchData1().then(data => {
         let nuevoDiv = document.createElement('div');
 
-        // Asignar un id único al nuevo div
-        nuevoDiv.id = 'barchart';
+        nuevoDiv.id = 'scatter';
 
-        // Insertar el nuevo div dentro de un contenedor existente
         document.body.appendChild(nuevoDiv);
 
+        var filteredData = data.char.map((c, index) => {
+            return c === 'Freezer' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
+        }).filter(item => item)
+
         const trace = {
-            x: data.power,
-            y: data.char,
-            type: 'bar',
+            x: filteredData.map(item => item.saga),
+            y: filteredData.map(item => item.power),
+            type: 'scatter',
             marker: {
-                color: [
-                    'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)',
-                    'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)',
-                    'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1))',
-                    'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
+                color: ['black'],
             },
-            width:0.5,
-            orientation: 'h',
+            line: {
+                color: 'purple',
+                width:0.7
+            },
+            width: 0.5,
             showlegend: false,
-            name: ''
+            name: 'Freezer'
+        };
+
+        var filteredData = data.char.map((c, index) => {
+            return c === 'Goku' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
+        }).filter(item => item)
+
+        const trace1 = {
+            x: filteredData.map(item => item.saga),
+            y: filteredData.map(item => item.power),
+            type: 'scatter',
+            marker: {
+                color: ['black']
+            },
+            line: {
+                color: 'orange',
+                width:0.7
+            },
+            width: 0.5,
+            showlegend: false,
+            name: 'Goku'
+        };
+
+        var filteredData = data.char.map((c, index) => {
+            return c === 'Vegeta' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
+        }).filter(item => item)
+
+        const trace2 = {
+            x: filteredData.map(item => item.saga),
+            y: filteredData.map(item => item.power),
+            type: 'scatter',
+            marker: {
+                color: ['black']
+            },
+            line: {
+                color: 'blue',
+                width:0.7
+            },
+            width: 0.5,
+            showlegend: false,
+            name: 'Vegeta'
+        };
+
+        var filteredData = data.char.map((c, index) => {
+            return c === 'Krillin' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
+        }).filter(item => item)
+
+        const trace4 = {
+            x: filteredData.map(item => item.saga),
+            y: filteredData.map(item => item.power),
+            type: 'scatter',
+            marker: {
+                color: ['black']
+            },
+            line: {
+                color: 'red',
+                width:0.7
+            },
+            width: 0.5,
+            showlegend: false,
+            name: 'Krillin'
         };
 
         const tracefantasma = {
-            x: data.power,
-            y: data.char,
-            name: 'Buenos',
-            type: 'bar',
+            x: data.saga,
+            y: data.power,
+            name: 'Freezer',
+            type: 'scatter',
+            marker: {
+                color: 'purple'
+            },
+            visible: 'legendonly'
+        };
+
+        const tracefantasma2 = {
+            x: data.saga,
+            y: data.power,
+            name: 'Goku',
+            type: 'scatter',
+            marker: {
+                color: 'orange'
+            },
+            visible: 'legendonly'
+        };
+
+        const tracefantasma3 = {
+            x: data.saga,
+            y: data.power,
+            name: 'Vegeta',
+            type: 'scatter',
             marker: {
                 color: 'blue'
             },
             visible: 'legendonly'
         };
 
-        const tracefantasma2 = {
-            x: data.power,
-            y: data.char,
-            name: 'Malos',
-            type: 'bar', 
+        const tracefantasma4 = {
+            x: data.saga,
+            y: data.power,
+            name: 'Krillin',
+            type: 'scatter',
             marker: {
                 color: 'red'
             },
             visible: 'legendonly'
         };
-        
-        const layout = {
-            title: {
-                text:'Saga de Namek',
-                font: {
-                    size: 18,
-                    color: 'black'
-            }},
-            width: '350',
-            height: '450',
-            barmode: 'overlay',
-            xaxis: {
-                title: "Cantidad de ki"
-            },
-            legend: {
-                font: {
-                    size: 14,
-                    color: 'black'
-                }
-            }
-        };
 
-        Plotly.newPlot('barchart', [trace, tracefantasma, tracefantasma2], layout);
-    });
-}
-
-//Gráfico N°2//
-
-async function fetchData2() {
-    const response = await fetch('./force.csv');
-    const data = await response.text();
-    
-    // Dividir los datos por líneas
-    const rows = data.split('\n').slice(1);
-    
-    const char = [];
-    const power = [];
-    
-    rows.forEach(row => {
-        const cols = row.split(',');
-        char.push((cols[1]));
-        power.push(parseFloat(cols[2]));
-    });
-
-    return { char, power };
-};
-
-function graf2() {
-    fetchData2().then(data => {
-        let nuevoDiv = document.createElement('div');
-
-        // Asignar un id único al nuevo div
-        nuevoDiv.id = 'barchart1';
-
-        // Insertar el nuevo div dentro de un contenedor existente
-        document.body.appendChild(nuevoDiv);
-
-        const trace = {
-            x: data.power,
-            y: data.char,
-            type: 'bar',
+        const f1 = {
+            x: ['Saga de Namek'],
+            y: [220000],
+            mode: 'markers+text',
+            type: 'scatter',
             marker: {
-                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)', 'rgba(255, 113, 113, 1)',
-                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)']
+                color: 'purple',
+                size: 10 
             },
-            width:0.5,
-            orientation: 'h',
+            text: ['<b>Freezer</b><br>Calmado'], 
+            textposition: 'top left',
             showlegend: false,
-            name: ''
         };
 
-        const tracefantasma = {
-            x: data.power,
-            y: data.char,
-            name: 'Buenos',
-            type: 'bar',
+        const f2 = {
+            x: ['Saga del Capitán Ginyu'],
+            y: [530000],
+            mode: 'markers+text',
+            type: 'scatter',
             marker: {
-                color: 'blue'
+                color: 'red',
+                size: 10
             },
-            visible: 'legendonly'
-        };
-
-        const tracefantasma2 = {
-            x: data.power,
-            y: data.char,
-            name: 'Malos',
-            type: 'bar', 
-            marker: {
-                color: 'red'
-            },
-            visible: 'legendonly'
-        };
-        
-        const layout = {
-            title: {
-                text:'Saga de las Fuerzas Especiales Ginyu',
-                font: {
-                    size: 18,
-                    color: 'black'
-            }},
-            width: '350',
-            height: '450',
-            barmode: 'overlay',
-            xaxis: {
-                title: "Cantidad de ki"
-            },
-            legend: {
-                font: {
-                    size: 14,
-                    color: 'black'
-                }
-            }
-        };
-
-        Plotly.newPlot('barchart1', [trace, tracefantasma, tracefantasma2], layout);
-    });
-}
-
-//Gráfico N°3//
-
-async function fetchData3() {
-    const response = await fetch('./ginyu.csv');
-    const data = await response.text();
-    
-    // Dividir los datos por líneas
-    const rows = data.split('\n').slice(1);
-    
-    const char = [];
-    const power = [];
-    
-    rows.forEach(row => {
-        const cols = row.split(',');
-        char.push((cols[1]));
-        power.push(parseFloat(cols[2]));
-    });
-
-    return { char, power };
-};
-
-function graf3() {
-    fetchData3().then(data => {
-        let nuevoDiv = document.createElement('div');
-
-        // Asignar un id único al nuevo div
-        nuevoDiv.id = 'barchart2';
-
-        // Insertar el nuevo div dentro de un contenedor existente
-        document.body.appendChild(nuevoDiv);
-
-        const trace = {
-            x: data.power,
-            y: data.char,
-            type: 'bar',
-            marker: {
-                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)',
-                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
-            },
-            width:0.5,
-            orientation: 'h',
+            text: ['<b>Freezer</b><br>Poder Base'], 
+            textposition: 'top left',
             showlegend: false,
-            name: ''
         };
 
-        const tracefantasma = {
-            x: data.power,
-            y: data.char,
-            name: 'Buenos',
-            type: 'bar',
+        const g1 = {
+            x: ['Saga de las Fuerzas Especiales Ginyu'],
+            y: [90000],
+            mode: 'markers+text',
+            type: 'scatter',
             marker: {
-                color: 'blue'
+                color: 'blue',
+                size: 10
             },
-            visible: 'legendonly'
-        };
-
-        const tracefantasma2 = {
-            x: data.power,
-            y: data.char,
-            name: 'Malos',
-            type: 'bar', 
-            marker: {
-                color: 'red'
-            },
-            visible: 'legendonly'
-        };
-        
-        const layout = {
-            title: {
-                text:'Saga del Capitán Ginyu',
-                font: {
-                    size: 18,
-                    color: 'black'
-            }},
-            width: '350',
-            height: '450',
-            barmode: 'overlay',
-            xaxis: {
-                title: "Cantidad de ki"
-            },
-            legend: {
-                font: {
-                    size: 14,
-                    color: 'black'
-                }
-            }
-        };
-
-        Plotly.newPlot('barchart2', [trace, tracefantasma, tracefantasma2], layout);
-    });
-}
-
-//Gráfico N°4//
-
-async function fetchData4() {
-    const response = await fetch('./freezer.csv');
-    const data = await response.text();
-    
-    // Dividir los datos por líneas
-    const rows = data.split('\n').slice(1);
-    
-    const char = [];
-    const power = [];
-    
-    rows.forEach(row => {
-        const cols = row.split(',');
-        char.push((cols[1]));
-        power.push(parseFloat(cols[2]));
-    });
-
-    return { char, power };
-};
-
-function graf4() {
-    fetchData4().then(data => {
-        let nuevoDiv = document.createElement('div');
-
-        // Asignar un id único al nuevo div
-        nuevoDiv.id = 'barchart3';
-
-        // Insertar el nuevo div dentro de un contenedor existente
-        document.body.appendChild(nuevoDiv);
-        //19, 14, 12, 19, 7, 6, 5, 4, 3
-        const trace = {
-            x: data.power,
-            y: data.char,
-            type: 'bar',
-            marker: {
-                color: ['rgba(93, 103, 255, 1)', 'rgba(255, 113, 113, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)',
-                        'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)', 'rgba(93, 103, 255, 1)']
-            },
-            width:0.5,
-            orientation: 'h',
+            text: ['<b>Goku</b><br>Aterriza en Namek'],
+            textposition: 'top left',
             showlegend: false,
-            name: ''
         };
 
-        const tracefantasma = {
-            x: data.power,
-            y: data.char,
-            name: 'Buenos',
-            type: 'bar',
+        const g2 = {
+            x: ['Saga del Capitán Ginyu'],
+            y: [180000],
+            mode: 'markers+text',
+            type: 'scatter',
             marker: {
-                color: 'blue'
+                color: 'blue', // Color del punto
+                size: 10 // Tamaño del punto
             },
-            visible: 'legendonly'
+            text: ['<b>Goku</b><br>Enfrentamiento con<br>el capitán Ginyu'], // Texto en formato HTML
+            textposition: 'bottom center', // Posición del texto
+            showlegend: false,
         };
 
-        const tracefantasma2 = {
-            x: data.power,
-            y: data.char,
-            name: 'Malos',
-            type: 'bar', 
+        const g3 = {
+            x: ['Saga de Freezer'],
+            y: [180000000],
+            mode: 'markers+text',
+            type: 'scatter',
             marker: {
-                color: 'red'
+                color: 'blue', 
+                size: 10 
             },
-            visible: 'legendonly'
+            text: ['<b>Goku</b><br>Se transforma en SSJ'],
+            textposition: 'top left', 
+            showlegend: false,
         };
-        
+
+        const k1 = {
+            x: ['Saga de Freezer'],
+            y: [75000],
+            mode: 'markers+text',
+            type: 'scatter',
+            marker: {
+                color: 'black',
+                size: 10 
+            },
+            text: ['<b>Krillin (Muerto)</b><br>Asesinado por Freezer'], 
+            textposition: 'top left', 
+            showlegend: false,
+        };
+
+        const v1 = {
+            x: ['Saga de Freezer'],
+            y: [3000000],
+            mode: 'markers+text',
+            type: 'scatter',
+            marker: {
+                color: 'black', // Color del punto
+                size: 10 // Tamaño del punto
+            },
+            text: ['<b>Vegeta (Muerto)</b><br>Asesinado por Freezer'], // Texto en formato HTML
+            textposition: 'top left', // Posición del texto
+            showlegend: false,
+        };
+
+
         const layout = {
             title: {
-                text:'Saga de Freezer',
+                text: 'Cronología de Namek con los niveles de poder',
                 font: {
                     size: 18,
                     color: 'black'
-            }},
-            width: '350',
-            height: '450',
+                }
+            },
+            width: 1500,
+            height: 750,
             barmode: 'overlay',
-            xaxis: {
-                title: "Cantidad de ki"
+            yaxis: {
+                title: "Cantidad de ki",
+                type: 'log',
+                autorange: true
             },
             legend: {
                 font: {
                     size: 14,
-                    color: 'black'
-                }
-            }
+                    color: 'black',
+                },
+                x: -600,
+                y:1.1,
+            },
         };
 
-        Plotly.newPlot('barchart3', [trace, tracefantasma, tracefantasma2], layout);
+        Plotly.newPlot('scatter', [trace, f1, f2, trace1, g1, g2, g3, trace2, k1, trace4, v1,
+            tracefantasma, tracefantasma2, tracefantasma3, tracefantasma4], layout);
     });
 }
 
@@ -409,14 +304,7 @@ function graf4() {
 //Función de activación//
 function activartodo(){
     graf1();
-    graf2();
-    graf3();
-    graf4();
     fondo1();
-    foto1();
-    foto2();
-    foto3();
-    foto4();
 }
 
 //Activación de todas las funciones con la función "activartodo()//
