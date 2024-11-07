@@ -5,20 +5,68 @@
     <title>¡Namekusei!</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Basic styling for the buttons */
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the hover-image div */
+        #hover-image {
+            position: absolute;
+            display: none;
+            pointer-events: none; /* Make sure the image doesn't block other events */
+            z-index: 1000; /* Keep the image on top of the plot */
+        }
+
+        #hover-image img {
+            max-width: 100px;
+            max-height: 100px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional styling */
+        }
+
+        /* Title styling */
+        .title {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Ordenamiendo de fondos -->
+    <!-- SVG background (you can customize this as needed) -->
     <svg id="fondo1"></svg>
 
-    <!-- Ordenamiendo del gráfico -->
-
+    <!-- Graph Container -->
     <div id="scatter"></div>
 
-    <!-- Ordenamiento de los titulos y subtitulos -->
+    <!-- Image Display (hidden by default) -->
+    <div id="hover-image"></div>
+
+    <!-- Title and Subtitle -->
     <label id="titulo" class="title">¿Quiénes son los personajes más fuertes de Namekusei?</label>
 
-    <!-- Uso del .js -->
+    <!-- Buttons (Esferas) -->
+    <button id="esfera1" class="button" onclick="show()"></button>
+    <button id="esfera2" class="button" onclick="show()"></button>
+    <button id="esfera3" class="button" onclick="show()"></button>
+    <button id="esfera4" class="button" onclick="show()"></button>
+
+    <!-- Include the JS logic (namek.js) -->
     <script src="namek.js"></script>
 </body>
 </html>

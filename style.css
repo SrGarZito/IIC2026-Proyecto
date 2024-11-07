@@ -51,3 +51,70 @@ body {
     display: flex;
     border: 5px solid rgba(255, 163, 87, 0.685);
 }
+
+#esfera1 {
+    top: 825px;
+    right: 1405px;
+    background-image: url(n1.jpg);
+    width:100px; 
+    height:50px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+#esfera2 {
+    top: 825px;
+    right: 1030px;
+    background-image: url(n2.jpg);
+    width:100px; 
+    height:50px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+#esfera3 {
+    top: 825px;
+    right: 650px;
+    background-image: url(n3.jpg);
+    width:100px; 
+    height:50px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+#esfera4 {
+    top: 825px;
+    right: 280px;
+    background-image: url(n4.jpg);
+    width:100px; 
+    height:50px;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    display: flex;
+}
+#exampleModal {
+    top: 825px;
+    right: 280px;
+    width:100px; 
+    height:50px;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    display: flex;
+}
+#hover-image {
+    position: absolute;
+    display: none; /* Initially hidden */
+    pointer-events: none; /* Make sure it does not interfere with the plot */
+    z-index: 1000; /* Ensure it's on top of the plot */
+}
+#hover-image img {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional styling */
+}
