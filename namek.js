@@ -15,28 +15,56 @@ function fondo1(){
     SVG.setAttribute("height", "800");
 }
 
-//Creación del gráfico//
 
-async function fetchData1() {
-    const response = await fetch('./df.csv');
-    const data = await response.text();
-    
-    // Dividir los datos por líneas
-    const rows = data.split('\n').slice(1);
-    
-    const char = [];
-    const power = [];
-    const saga = [];
-    
-    rows.forEach(row => {
-        const cols = row.split(',');
-        char.push((cols[1]));
-        power.push(parseFloat(cols[2]));
-        saga.push(cols[3])
+// Function to show the image of the clicked point
+function showPointImage() {
+    const imageDiv = document.createElement('div');
+    imageDiv.id = 'hover-image';
+    imageDiv.style.position = 'absolute';
+    imageDiv.style.display = 'none';  // Initially hidden
+    document.body.appendChild(imageDiv);
+
+    // Here we'll associate each point with an image using its index.
+    // You can adjust the naming pattern for images based on your needs.
+    // For example, using the power and saga values to generate a key or just using a sequential index.
+    const pointImages = {
+        0: 'n1.jpg',  // Image for the first point
+        1: 'n2.jpg',  // Image for the second point
+        2: 'n3.jpg',  // Image for the third point
+        3: 'n4.jpg',  // Image for the fourth point
+        // Add more images here for more points as needed
+    };
+
+    // Plotly click event listener to display the image on click
+    const plotDiv = document.getElementById('scatter');
+
+    if (!plotDiv) {
+        console.error("Plotly div not found!");
+        return;
+    }
+
+    // Use Plotly's event handling system to listen for clicks
+    plotDiv.on('plotly_click', function(eventData) {
+        const point = eventData.points[0];  // Get the clicked point data
+
+        const index = point.pointIndex;  // Get the index of the clicked point
+
+        // Check if an image exists for this index
+        if (pointImages[index] !== undefined) {
+            imageDiv.style.display = 'block';  // Show the image div
+            imageDiv.style.left = `${eventData.event.clientX + 10}px`; // Position near the mouse click
+            imageDiv.style.top = `${eventData.event.clientY + 10}px`;
+
+            // Set the image inside the div
+            imageDiv.innerHTML = `<img src="${pointImages[index]}" alt="Point Image" style="max-width: 100px; max-height: 100px;"/>`;
+        }
     });
 
-    return { char, power, saga };
-};
+    // Hide the image when you click anywhere else on the plot
+    plotDiv.on('plotly_relayout', function() {
+        imageDiv.style.display = 'none';  // Hide the image div if the plot is re-arranged
+    });
+}
 
 async function fetchData1() {
     const response = await fetch('./df.csv');
@@ -57,76 +85,40 @@ async function fetchData1() {
     });
 
     return { char, power, saga };
-};
+}
 
+// Function to create the plot and handle clicks
 function graf1() {
     fetchData1().then(data => {
         let nuevoDiv = document.createElement('div');
-        var myPlot = document.getElementById('scatter');
-
         nuevoDiv.id = 'scatter';
         document.body.appendChild(nuevoDiv);
 
-        var filteredData = data.char.map((c, index) => {
-            return c === 'Freezer' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
-        }).filter(item => item);
+        // Create the traces for each character
+        const createCharacterTrace = (characterName, color, lineColor) => {
+            var filteredData = data.char.map((c, index) => {
+                return c === characterName ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
+            }).filter(item => item);
 
-        const trace = {
-            x: filteredData.map(item => item.saga),
-            y: filteredData.map(item => item.power),
-            type: 'scatter',
-            marker: { color: ['black'] },
-            line: { color: 'purple', width: 0.7 },
-            width: 0.5,
-            showlegend: false,
-            name: 'Freezer'
+            return {
+                x: filteredData.map(item => item.saga),
+                y: filteredData.map(item => item.power),
+                type: 'scatter',
+                marker: { color: ['black'] },
+                line: { color: lineColor, width: 0.7 },
+                width: 0.5,
+                showlegend: false,
+                name: characterName
+            };
         };
 
-        var filteredData1 = data.char.map((c, index) => {
-            return c === 'Goku' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
-        }).filter(item => item);
+        // Create the traces for all characters
+        const traceFreezer = createCharacterTrace('Freezer', 'black', 'purple');
+        const traceGoku = createCharacterTrace('Goku', 'black', 'orange');
+        const traceVegeta = createCharacterTrace('Vegeta', 'black', 'blue');
+        const traceKrillin = createCharacterTrace('Krillin', 'black', 'red');
 
-        const trace1 = {
-            x: filteredData1.map(item => item.saga),
-            y: filteredData1.map(item => item.power),
-            type: 'scatter',
-            marker: { color: ['black'] },
-            line: { color: 'orange', width: 0.7 },
-            width: 0.5,
-            showlegend: false,
-            name: 'Goku'
-        };
-
-        var filteredData2 = data.char.map((c, index) => {
-            return c === 'Vegeta' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
-        }).filter(item => item);
-
-        const trace2 = {
-            x: filteredData2.map(item => item.saga),
-            y: filteredData2.map(item => item.power),
-            type: 'scatter',
-            marker: { color: ['black'] },
-            line: { color: 'blue', width: 0.7 },
-            width: 0.5,
-            showlegend: false,
-            name: 'Vegeta'
-        };
-
-        var filteredData3 = data.char.map((c, index) => {
-            return c === 'Krillin' ? { char: c, power: data.power[index], saga: data.saga[index] } : null;
-        }).filter(item => item);
-
-        const trace4 = {
-            x: filteredData3.map(item => item.saga),
-            y: filteredData3.map(item => item.power),
-            type: 'scatter',
-            marker: { color: ['black'] },
-            line: { color: 'red', width: 0.7 },
-            width: 0.5,
-            showlegend: false,
-            name: 'Krillin'
-        };
-
+        // Layout settings for the plot
         const layout = {
             title: {
                 text: 'Cronología de Namek con los niveles de poder',
@@ -147,44 +139,24 @@ function graf1() {
             },
         };
 
-        data = [trace, trace1, trace2, trace4];
-        Plotly.newPlot('scatter', data, layout);
+        // Combine all traces into a single array
+        const dataToPlot = [
+            traceFreezer, traceGoku, traceVegeta, traceKrillin
+        ];
 
-        // Create a div to display the image
-        var imageDiv = document.getElementById('hover-image');
+        // Create the plot
+        Plotly.newPlot('scatter', dataToPlot, layout);
 
-        // Image paths for each character
-        const characterImages = {
-            'Freezer': 'n1.jpg',
-            'Goku': 'n4.jpg',
-            'Vegeta': 'n4.jpg',
-            'Krillin': 'esf2.png'
-        };
-
-        // Click event to display image
-        myPlot.on('plotly_click', function(eventData) {
-            const point = eventData.points[0];
-            const character = point.data.name; // Get character name (Freezer, Goku, etc.)
-
-            // Check if the image exists for the character
-            if (characterImages[character]) {
-                imageDiv.style.display = 'block'; // Show the image
-                imageDiv.style.left = `${eventData.event.clientX + 10}px`; // Position near mouse
-                imageDiv.style.top = `${eventData.event.clientY + 10}px`;
-                imageDiv.innerHTML = `<img src="${characterImages[character]}" alt="${character}" style="max-width: 100px; max-height: 100px;"/>`;
-            }
-        });
+        // Call showPointImage after rendering the plot
+        showPointImage();
     });
 }
 
-
-//Función de activación//
-function activartodo(){
-    
+// Función de activación//
+function activartodo() {
     graf1();
     fondo1();
 }
 
-
-//Activación de todas las funciones con la función "activartodo()//
-activartodo()
+// Activación de todas las funciones con la función "activartodo()"
+activartodo();

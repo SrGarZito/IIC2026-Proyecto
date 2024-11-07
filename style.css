@@ -108,13 +108,14 @@ body {
 }
 #hover-image {
     position: absolute;
-    display: none; /* Initially hidden */
-    pointer-events: none; /* Make sure it does not interfere with the plot */
-    z-index: 1000; /* Ensure it's on top of the plot */
+    display: none;
+    z-index: 9999;
 }
+
 #hover-image img {
     max-width: 100px;
     max-height: 100px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional styling */
+    border: 2px solid #000;
+    background-color: white;
+    padding: 5px;
 }
