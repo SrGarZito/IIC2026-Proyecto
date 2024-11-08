@@ -24,6 +24,9 @@ function showPointImage() {
     imageDiv.style.display = 'none';  // Initially hidden
     document.body.appendChild(imageDiv);
 
+    // Here we'll associate each point with an image using its index.
+    // You can adjust the naming pattern for images based on your needs.
+    // For example, using the power and saga values to generate a key or just using a sequential index.
     const pointImages = {
         0: 'n1.jpg', 
         1: 'n2.jpg',  
@@ -41,17 +44,17 @@ function showPointImage() {
     }
 
     // Use Plotly's event handling system to listen for clicks
-    scatter.on('plotly_click', function(eventData) {
-        const point = eventData.points[0];  // Get the clicked point data
+    plotDiv.on('plotly_click', function(eventData) {
+        const point = eventData.points[3];  // Get the clicked point data
 
         const index = point.pointIndex;  // Get the index of the clicked point
         console.log(point)
         imageDiv.style.display = 'block';  // Show the image div
-        imageDiv.style.left = `${eventData.event.clientX + 10}px`; // Position near the mouse click
-        imageDiv.style.top = `${eventData.event.clientY + 10}px`;
+        imageDiv.style.right = `657px`; // Position near the mouse click
+        imageDiv.style.top = `220px`;
 
             // Set the image inside the div
-        imageDiv.innerHTML = `<img src="${pointImages[index]}" alt="Point Image" style="max-width: 100px; max-height: 100px;"/>`;
+        imageDiv.innerHTML = `<img src="${pointImages[index]}" alt="Point Image" style="max-width: 1000px; max-height: 1000px;"/>`;
         
     });
 
