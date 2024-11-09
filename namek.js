@@ -28,22 +28,22 @@ function showPointImage() {
     // You can adjust the naming pattern for images based on your needs.
     // For example, using the power and saga values to generate a key or just using a sequential index.
     const pointImages = {
-        220000: 'n1.jpg', 
-        30000: 'n2.jpg',  
-        13000: 'n3.jpg',  
-        12000: 'owned.gif',  
-        220001: 'n1.jpg', 
-        90001: 'n2.jpg',  
-        40001: 'n3.jpg',  
-        13001: 'owned.gif',
-        530002: 'n1.jpg', 
-        250002: 'n2.jpg',  
-        180002: 'n3.jpg',  
-        18002: 'owned.gif',
-        180000003: 'n1.jpg', 
-        120000003: 'n2.jpg',  
-        3000003: 'n3.jpg',  
-        75003: 'owned.gif',
+        220000: 'f1.gif', 
+        30000: 'v1.gif',  
+        13000: 'k1.gif',  
+        12000: 'g1.gif',  
+        220001: 'f2.gif', 
+        90001: 'g2.gif',  
+        40001: 'v2.gif',  
+        13001: 'k2.gif',
+        530002: 'f3.gif', 
+        250002: 'v3.gif',  
+        180002: 'g3.gif',  
+        18002: 'k3.gif',
+        180000003: 'g4.gif', 
+        120000003: 'f4.gif',  
+        3000003: 'v4.gif',  
+        75003: 'k4.gif',
     };
 
     // Plotly click event listener to display the image on click
@@ -61,7 +61,7 @@ function showPointImage() {
         const index = point.y + point.pointIndex ;  // Get the index of the clicked point
         console.log(point)
         imageDiv.style.display = 'block';  // Show the image div
-        imageDiv.style.right = `657px`; // Position near the mouse click
+        imageDiv.style.right = `720px`; // Position near the mouse click
         imageDiv.style.top = `220px`;
 
             // Set the image inside the div
