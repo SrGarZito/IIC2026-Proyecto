@@ -64,7 +64,7 @@ function showPointImage() {
         imageDiv.style.right = `720px`; // Position near the mouse click
         imageDiv.style.top = `220px`;
 
-        var audio = new Audio('\button.mp3');
+        var audio = new Audio('button.mp3');
         audio.play();
 
             // Set the image inside the div
