@@ -64,6 +64,9 @@ function showPointImage() {
         imageDiv.style.right = `720px`; // Position near the mouse click
         imageDiv.style.top = `220px`;
 
+        var audio = new Audio('button.mp3');
+        audio.play();
+
             // Set the image inside the div
         imageDiv.innerHTML = `<img src="${pointImages[index]}" alt="Point Image" style="max-width: 1000px; max-height: 1000px;"/>`;
         
