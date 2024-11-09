@@ -28,11 +28,22 @@ function showPointImage() {
     // You can adjust the naming pattern for images based on your needs.
     // For example, using the power and saga values to generate a key or just using a sequential index.
     const pointImages = {
-        0: 'n1.jpg', 
-        1: 'n2.jpg',  
-        2: 'n3.jpg',  
-        3: 'n4.jpg',  
-        
+        220000: 'n1.jpg', 
+        30000: 'n2.jpg',  
+        13000: 'n3.jpg',  
+        12000: 'owned.gif',  
+        220001: 'n1.jpg', 
+        90001: 'n2.jpg',  
+        40001: 'n3.jpg',  
+        13001: 'owned.gif',
+        530002: 'n1.jpg', 
+        250002: 'n2.jpg',  
+        180002: 'n3.jpg',  
+        18002: 'owned.gif',
+        180000003: 'n1.jpg', 
+        120000003: 'n2.jpg',  
+        3000003: 'n3.jpg',  
+        75003: 'owned.gif',
     };
 
     // Plotly click event listener to display the image on click
@@ -45,9 +56,9 @@ function showPointImage() {
 
     // Use Plotly's event handling system to listen for clicks
     plotDiv.on('plotly_click', function(eventData) {
-        const point = eventData.points[3];  // Get the clicked point data
+        const point = eventData.points[0];  // Get the clicked point data
 
-        const index = point.pointIndex;  // Get the index of the clicked point
+        const index = point.y + point.pointIndex ;  // Get the index of the clicked point
         console.log(point)
         imageDiv.style.display = 'block';  // Show the image div
         imageDiv.style.right = `657px`; // Position near the mouse click
@@ -342,7 +353,7 @@ function graf1() {
             },
         };
 
-        Plotly.newPlot('scatter', [trace, f1, f2, trace1, g1, g2, g3, trace2, k1, trace4, v1,
+        Plotly.newPlot('scatter', [trace, trace1, trace2, trace4, 
             tracefantasma, tracefantasma2, tracefantasma3, tracefantasma4], layout);
             showPointImage();
     });
