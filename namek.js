@@ -116,14 +116,14 @@ function graf1() {
             y: filteredData.map(item => item.power),
             type: 'scatter',
             marker: {
-                color: ['black'],
+                color: ['black', 'black', 'black', 'black'],
+                size: 7.5
             },
             line: {
                 color: 'purple',
-                width:0.7
+                width:3
             },
-            width: 0.5,
-            showlegend: false,
+            text: ['En su búsqueda de las esferas del Dragón','El llamado a las Fuerzas Especiales Ginyu','Transformación del Tirano', 'El 100% de su potencial'], 
             name: 'Freezer'
         };
 
@@ -136,14 +136,14 @@ function graf1() {
             y: filteredData.map(item => item.power),
             type: 'scatter',
             marker: {
-                color: ['black']
+                color: ['black', 'black', 'black', 'black'],
+                size: 7.5
             },
             line: {
                 color: 'orange',
-                width:0.7
+                width:3
             },
-            width: 0.5,
-            showlegend: false,
+            text: ['En entrenamiento','Pelea contra las Fuerzas Especiales Ginyu','Cambio de cuerpo con el Capitán Ginyu','Transformación del Legendario Super Saiyajin'], 
             name: 'Goku'
         };
 
@@ -156,14 +156,14 @@ function graf1() {
             y: filteredData.map(item => item.power),
             type: 'scatter',
             marker: {
-                color: ['black']
+                color: ['black', 'black', 'black', 'black'],
+                size: 7.5
             },
             line: {
                 color: 'blue',
-                width:0.7
+                width:3
             },
-            width: 0.5,
-            showlegend: false,
+            text: ['Pelea contra Zarbon','Decapitación de Guldo (Guerrero de las Fuerzas Especiales Ginyu)','Enfrentamiento contra Ginyu (En el cuerpo de Goku)','Muerte del orgulloso Saiyajin'], 
             name: 'Vegeta'
         };
 
@@ -176,159 +176,16 @@ function graf1() {
             y: filteredData.map(item => item.power),
             type: 'scatter',
             marker: {
-                color: ['black']
+                color: ['black', 'black', 'black', 'black'],
+                size: 7.5
             },
             line: {
                 color: 'red',
-                width:0.7
+                width: 3
             },
-            width: 0.5,
-            showlegend: false,
+            text: ['Aterrizaje en Namekusei','Pelea contra las Fuerzas Especiales Ginyu','Enfrentamiento contra Ginyu (En el cuerpo de Goku)','Muerte a manos del Tirano'], 
             name: 'Krillin'
         };
-
-        const tracefantasma = {
-            x: data.saga,
-            y: data.power,
-            name: 'Freezer',
-            type: 'scatter',
-            marker: {
-                color: 'purple'
-            },
-            visible: 'legendonly'
-        };
-
-        const tracefantasma2 = {
-            x: data.saga,
-            y: data.power,
-            name: 'Goku',
-            type: 'scatter',
-            marker: {
-                color: 'orange'
-            },
-            visible: 'legendonly'
-        };
-
-        const tracefantasma3 = {
-            x: data.saga,
-            y: data.power,
-            name: 'Vegeta',
-            type: 'scatter',
-            marker: {
-                color: 'blue'
-            },
-            visible: 'legendonly'
-        };
-
-        const tracefantasma4 = {
-            x: data.saga,
-            y: data.power,
-            name: 'Krillin',
-            type: 'scatter',
-            marker: {
-                color: 'red'
-            },
-            visible: 'legendonly'
-        };
-
-        const f1 = {
-            x: ['Saga de Namek'],
-            y: [220000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'purple',
-                size: 10 
-            },
-            text: ['<b>Freezer</b><br>Calmado'], 
-            textposition: 'top left',
-            showlegend: false,
-        };
-
-        const f2 = {
-            x: ['Saga del Capitán Ginyu'],
-            y: [530000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'red',
-                size: 10
-            },
-            text: ['<b>Freezer</b><br>Poder Base'], 
-            textposition: 'top left',
-            showlegend: false,
-        };
-
-        const g1 = {
-            x: ['Saga de las Fuerzas Especiales Ginyu'],
-            y: [90000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'blue',
-                size: 10
-            },
-            text: ['<b>Goku</b><br>Aterriza en Namek'],
-            textposition: 'top left',
-            showlegend: false,
-        };
-
-        const g2 = {
-            x: ['Saga del Capitán Ginyu'],
-            y: [180000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'blue', // Color del punto
-                size: 10 // Tamaño del punto
-            },
-            text: ['<b>Goku</b><br>Enfrentamiento con<br>el capitán Ginyu'], // Texto en formato HTML
-            textposition: 'bottom center', // Posición del texto
-            showlegend: false,
-        };
-
-        const g3 = {
-            x: ['Saga de Freezer'],
-            y: [180000000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'blue', 
-                size: 10 
-            },
-            text: ['<b>Goku</b><br>Se transforma en SSJ'],
-            textposition: 'top left', 
-            showlegend: false,
-        };
-
-        const k1 = {
-            x: ['Saga de Freezer'],
-            y: [75000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'black',
-                size: 10 
-            },
-            text: ['<b>Krillin (Muerto)</b><br>Asesinado por Freezer'], 
-            textposition: 'top left', 
-            showlegend: false,
-        };
-
-        const v1 = {
-            x: ['Saga de Freezer'],
-            y: [3000000],
-            mode: 'markers+text',
-            type: 'scatter',
-            marker: {
-                color: 'black', // Color del punto
-                size: 10 // Tamaño del punto
-            },
-            text: ['<b>Vegeta (Muerto)</b><br>Asesinado por Freezer'], // Texto en formato HTML
-            textposition: 'top left', // Posición del texto
-            showlegend: false,
-        };
-
 
         const layout = {
             title: {
@@ -356,8 +213,7 @@ function graf1() {
             },
         };
 
-        Plotly.newPlot('scatter', [trace, trace1, trace2, trace4, 
-            tracefantasma, tracefantasma2, tracefantasma3, tracefantasma4], layout);
+        Plotly.newPlot('scatter', [trace, trace1, trace2, trace4], layout);
             showPointImage();
     });
 }
