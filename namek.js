@@ -366,9 +366,61 @@ function activartodo(){
     fondo1();
 }
 
+
+
+
 //Activación de todas las funciones con la función "activartodo()//
 activartodo()
 //el mero echo de poner la lesera rompe todo el codigo
 Protobject.onReceived((order) => {
+	console.log(order[0])
+  
+   	const imageDiv = document.createElement('div');
+    imageDiv.id = 'hover-image';
+    imageDiv.style.position = 'absolute';
+    imageDiv.style.display = 'none';  // Initially hidden
+    document.body.appendChild(imageDiv);
+
+    // Here we'll associate each point with an image using its index.
+    // You can adjust the naming pattern for images based on your needs.
+    // For example, using the power and saga values to generate a key or just using a sequential index.
+    const pointImages = {
+        101: 'https://srgarzito.github.io/IIC2026-Proyecto/f1.gif', 
+        102: 'https://srgarzito.github.io/IIC2026-Proyecto/v1.gif',  
+        103: 'https://srgarzito.github.io/IIC2026-Proyecto/k1.gif',  
+        104: 'https://srgarzito.github.io/IIC2026-Proyecto/g1.gif',  
+        201: 'https://srgarzito.github.io/IIC2026-Proyecto/f2.gif', 
+        204: 'https://srgarzito.github.io/IIC2026-Proyecto/g2.gif',  
+        202: 'https://srgarzito.github.io/IIC2026-Proyecto/v2.gif',  
+        203: 'https://srgarzito.github.io/IIC2026-Proyecto/k2.gif',
+        301: 'https://srgarzito.github.io/IIC2026-Proyecto/f3.gif', 
+        302: 'https://srgarzito.github.io/IIC2026-Proyecto/v3.gif',  
+        304: 'https://srgarzito.github.io/IIC2026-Proyecto/g3.gif',  
+        303: 'https://srgarzito.github.io/IIC2026-Proyecto/k3.gif',
+        404: 'https://srgarzito.github.io/IIC2026-Proyecto/g4.gif', 
+        401: 'https://srgarzito.github.io/IIC2026-Proyecto/f4.gif',  
+        402: 'https://srgarzito.github.io/IIC2026-Proyecto/v4.gif',  
+        403: 'https://srgarzito.github.io/IIC2026-Proyecto/k4.gif',
+    };
+
+
+        imageDiv.style.display = 'block';  
+        imageDiv.style.right = `720px`; 
+        imageDiv.style.top = `220px`;
+
+
+
+if (
+    order[0] + order[1] !== 100 &&
+    order[0] + order[1] !== 200 &&
+    order[0] + order[1] !== 300 &&
+    order[0] + order[1] !== 400 &&
+    order[0] + order[1] !== 500 &&
+    order[0] + order[1] !== 600 &&
+    order[0] + order[1] !== 700
+) {
   console.log(order)
+    imageDiv.innerHTML = `<img src="${pointImages[order[0] + order[1]]}" alt="Point Image" style="max-width: 1000px; max-height: 1000px;"/>`;
+}
+
 });
