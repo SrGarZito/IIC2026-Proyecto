@@ -1,3 +1,143 @@
+import "https://cdn.plot.ly/plotly-2.34.0.min.js"; // Importa la librería Plotly para gráficos
+import Protobject from './js/protobject.js'; // Importa el objeto Protobject para la comunicación
+
+// Crea un contenedor para el gráfico en el cuerpo del documento
+document.body.innerHTML = `
+    <!-- SVG background (you can customize this as needed) -->
+    <svg id="fondo1"></svg>
+
+    <!-- Graph Container -->
+    <div id="scatter"></div>
+
+    <!-- Image Display (hidden by default) -->
+    <div id="hover-image"></div>
+
+    <!-- Title and Subtitle -->
+    <label id="titulo" class="title">¿Cómo varía la fuerza en Namekusei?</label>
+    
+    <style>
+
+    body {
+        background-color: rgb(49, 162, 222);
+        position: relative
+    }
+
+    /*Fondos que permiten agregar estilo*/
+    #fondo1 {
+        /* background-color: rgb(115, 161, 247); */
+        position: absolute;
+        /* border: 6px solid rgb(62, 65, 164); */
+        display: flex;
+        right: 50px;
+        top: 115px;
+        border-radius: 30px;
+    }
+
+
+    /*Label de titulos y subtitulos*/
+
+    .title {
+        color: rgb(239, 242, 255);
+        font-weight: bold;
+        margin-bottom: 20px;
+        align-items: center;
+        position: absolute;
+        display: flex;
+    }
+
+    #titulo {
+        top: 10px;
+        right: 50px;
+        font-size: 56px;
+        font-family: sans-serif;
+        /* background-color: rgb(115, 161, 247); */
+        /* border: 6px solid rgb(62, 65, 164); */
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        width: 1755px;
+        border-radius: 30px;
+    }
+
+    /*Gráfico*/
+
+    #scatter {
+        position:absolute;
+        top: 120px;
+        right: 170px;
+        display: flex;
+        border: 5px solid rgba(255, 163, 87, 0.685);
+    }
+
+    #esfera1 {
+        top: 825px;
+        right: 1405px;
+        background-image: url(n1.jpg);
+        width:100px; 
+        height:50px;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        display: flex;
+    }
+    #esfera2 {
+        top: 825px;
+        right: 1030px;
+        background-image: url(n2.jpg);
+        width:100px; 
+        height:50px;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        display: flex;
+    }
+    #esfera3 {
+        top: 825px;
+        right: 650px;
+        background-image: url(n3.jpg);
+        width:100px; 
+        height:50px;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        display: flex;
+    }
+    #esfera4 {
+        top: 825px;
+        right: 280px;
+        background-image: url(n4.jpg);
+        width:100px; 
+        height:50px;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        display: flex;
+    }
+    #exampleModal {
+        top: 825px;
+        right: 280px;
+        width:100px; 
+        height:50px;
+        background-position: center;
+        background-size: cover;
+        position: fixed;
+        display: flex;
+    }
+    #hover-image {
+        position: absolute;
+        display: none;
+        z-index: 9999;
+    }
+
+    #hover-image img {
+        max-width: 100px;
+        max-height: 100px;
+        padding: 5px;
+    }
+    </style>
+    
+`;
+
 
 //Creación del mapa de sagas de Namek//
 //esto es come el arauco empiesa creo la verdad no se si funvciona entonces esta bien y si no no //
@@ -29,22 +169,22 @@ function showPointImage() {
     // You can adjust the naming pattern for images based on your needs.
     // For example, using the power and saga values to generate a key or just using a sequential index.
     const pointImages = {
-        220000: 'f1.gif', 
-        30000: 'v1.gif',  
-        13000: 'k1.gif',  
-        12000: 'g1.gif',  
-        220001: 'f2.gif', 
-        90001: 'g2.gif',  
-        40001: 'v2.gif',  
-        13001: 'k2.gif',
-        530002: 'f3.gif', 
-        250002: 'v3.gif',  
-        180002: 'g3.gif',  
-        18002: 'k3.gif',
-        180000003: 'g4.gif', 
-        120000003: 'f4.gif',  
-        3000003: 'v4.gif',  
-        75003: 'k4.gif',
+        220000: 'https://srgarzito.github.io/IIC2026-Proyecto/f1.gif', 
+        30000: 'https://srgarzito.github.io/IIC2026-Proyecto/v1.gif',  
+        13000: 'https://srgarzito.github.io/IIC2026-Proyecto/k1.gif',  
+        12000: 'https://srgarzito.github.io/IIC2026-Proyecto/g1.gif',  
+        220001: 'https://srgarzito.github.io/IIC2026-Proyecto/f2.gif', 
+        90001: 'https://srgarzito.github.io/IIC2026-Proyecto/g2.gif',  
+        40001: 'https://srgarzito.github.io/IIC2026-Proyecto/v2.gif',  
+        13001: 'https://srgarzito.github.io/IIC2026-Proyecto/k2.gif',
+        530002: 'https://srgarzito.github.io/IIC2026-Proyecto/f3.gif', 
+        250002: 'https://srgarzito.github.io/IIC2026-Proyecto/v3.gif',  
+        180002: 'https://srgarzito.github.io/IIC2026-Proyecto/g3.gif',  
+        18002: 'https://srgarzito.github.io/IIC2026-Proyecto/k3.gif',
+        180000003: 'https://srgarzito.github.io/IIC2026-Proyecto/g4.gif', 
+        120000003: 'https://srgarzito.github.io/IIC2026-Proyecto/f4.gif',  
+        3000003: 'https://srgarzito.github.io/IIC2026-Proyecto/v4.gif',  
+        75003: 'https://srgarzito.github.io/IIC2026-Proyecto/k4.gif',
     };
 
     // Plotly click event listener to display the image on click
@@ -65,7 +205,7 @@ function showPointImage() {
         imageDiv.style.right = `720px`; 
         imageDiv.style.top = `220px`;
 
-        var audio = new Audio('button.mp3');
+        var audio = new Audio('https://srgarzito.github.io/IIC2026-Proyecto/button.mp3');
         audio.play();
 
             // Set the image inside the div
@@ -80,7 +220,7 @@ function showPointImage() {
 }
 
 async function fetchData1() {
-    const response = await fetch('./df.csv');
+    const response = await fetch('https://srgarzito.github.io/IIC2026-Proyecto/df.csv');
     const data = await response.text();
     
     // Dividir los datos por líneas
@@ -229,3 +369,6 @@ function activartodo(){
 //Activación de todas las funciones con la función "activartodo()//
 activartodo()
 //el mero echo de poner la lesera rompe todo el codigo
+Protobject.onReceived((order) => {
+  console.log(order)
+});
