@@ -1,5 +1,6 @@
 
 //Creación del mapa de sagas de Namek//
+//esto es come el arauco empiesa creo la verdad no se si funvciona entonces esta bien y si no no //
 
 function namek(){
     let SVG = document.getElementById("namek");
@@ -60,8 +61,8 @@ function showPointImage() {
 
         const index = point.y + point.pointIndex ;  // Get the index of the clicked point
         console.log(point)
-        imageDiv.style.display = 'block';  // Show the image div
-        imageDiv.style.right = `720px`; // Position near the mouse click
+        imageDiv.style.display = 'block';  
+        imageDiv.style.right = `720px`; 
         imageDiv.style.top = `220px`;
 
         var audio = new Audio('button.mp3');
@@ -227,3 +228,4 @@ function activartodo(){
 
 //Activación de todas las funciones con la función "activartodo()//
 activartodo()
+//el mero echo de poner la lesera rompe todo el codigo
