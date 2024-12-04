@@ -53,5 +53,5 @@ Aruco.onData((data) => {
   console.log(idsMasCercanos); // Muestra los IDs de los dos marcadores más cercanos
 
   // Envía los IDs ordenados al sistema principal
-  Protobject.send(idsMasCercanos).to('namek.js');
+  Protobject.send(idsMasCercanos).to('main.js');
 });
